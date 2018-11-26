@@ -1,9 +1,8 @@
-var pageUrl = window.location.href.split('#')[0],
+const pageUrl = window.location.href.split('#')[0],
     shareCopy = $('meta[property=og\\:title]').attr('content');
 
-module.exports =  {
+export default {
     init: function() {
-        console.log(shareCopy);
         this.setLinks('.uit-share');
     },
 
@@ -14,7 +13,7 @@ module.exports =  {
     },
 
     getTwitterLink: function() {
-        return 'https://twitter.com/intent/tweet?text=' + encodeURI(shareCopy) + 
+        return 'https://twitter.com/intent/tweet?text=' + encodeURI(shareCopy) +
                 '&url=' + encodeURIComponent(pageUrl + '?CMP=share_btn_tw');
     },
 

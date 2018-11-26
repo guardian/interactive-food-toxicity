@@ -1,6 +1,6 @@
 // Javascript that is inline. Should be used for anything that needs to be immediate
-window.$ = require('./vendor/jquery.js');
+import jquery from 'jquery';
 
-var share = require('./modules/share.js');
+import share from './modules/share.js';
 
 share.init();
