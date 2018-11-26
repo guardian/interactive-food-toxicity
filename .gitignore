@@ -6,5 +6,6 @@ bower_components/
 yarn.lock
 .DS_Store
 .sass-cache/
+package-lock.json
 keys.json
 npm-debug.log
