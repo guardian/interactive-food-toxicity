@@ -13,6 +13,11 @@
     margin-right: 20px;
     color: $c-white;
     background-color: $c-red;
+    transition: opacity 0.5s linear;
+
+    &.is-selected {
+        opacity: 0.2;
+    }
 }
 
 .uit-shop__basket {

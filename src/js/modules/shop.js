@@ -1,6 +1,7 @@
 import draggable from '@shopify/draggable';
 
-let isOverBasket = false;
+let isOverBasket = false,
+    $source;
 
 export default {
     init() {
@@ -13,11 +14,22 @@ export default {
             delay: 0,
         });
 
+        items.on('drag:start', (event) => {
+            $source = $(event.data.originalSource);
+            $source.addClass('is-selected');
+
+        });
+
         items.on('drag:move', (event) => {
             isOverBasket = $(event.sensorEvent.target).hasClass('uit-shop__basket');
         });
 
         items.on('drag:stop', (event) => {
+            $source.removeClass('is-selected');
+
+            if (isOverBasket) {
+                $source.addClass('is-in-basket');
+            }
             console.log(isOverBasket);
         });
     }
