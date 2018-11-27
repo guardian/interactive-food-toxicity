@@ -3,5 +3,7 @@ import jquery from 'jquery';
 window.$ = jquery;
 
 import share from './modules/share.js';
+import shop from './modules/shop.js';
 
 share.init();
+shop.init();
