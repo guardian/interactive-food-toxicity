@@ -1,21 +1,24 @@
 import draggable from '@shopify/draggable';
 
+let isOverBasket = false;
+
 export default {
     init() {
         this.initDragging();
     },
 
     initDragging() {
-        const shoppingArea = new draggable.Droppable(document.querySelectorAll('.uit-shop__area'), {
+        const items = new draggable.Draggable(document.querySelectorAll('.uit-shop__items'), {
             draggable: '.uit-shop__item',
-            dropzone: '.uit-shop__area',
-            mirror: {
-                constrainDimensions: true,
-            }
+            delay: 0,
         });
 
-        shoppingArea.on("droppable:over", function() {
-          $('.uit-shop__area').removeClass('draggable-droppable--occupied');
+        items.on('drag:move', (event) => {
+            isOverBasket = $(event.sensorEvent.target).hasClass('uit-shop__basket');
+        });
+
+        items.on('drag:stop', (event) => {
+            console.log(isOverBasket);
         });
     }
 };
