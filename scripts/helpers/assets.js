@@ -7,6 +7,7 @@ var markdown = require('markdown').markdown;
 var rollup = require('rollup');
 var resolve = require('rollup-plugin-node-resolve');
 var minify = require('rollup-plugin-babel-minify');
+var commonjs = require('rollup-plugin-commonjs');
 
 module.exports = {
     js: function(path, fileName, absolutePath, isDeploy) {
@@ -18,17 +19,23 @@ module.exports = {
                 input: './src/js/' + fileName + '.js',
                 plugins: [
                     resolve(),
-                    minify({
-                        sourceMap: true,
-                        comments: false
+                    commonjs({
+                        namedExports: {
+                            'node_modules/jquery/dist/jquery.min.js': [ 'jquery' ]
+                        }
                     })
                 ]
             });
 
+            // minify({
+            //     sourceMap: true,
+            //     comments: false
+            // })
+
             await bundle.write({
-                dir: path,
-                file: fileName + '.js',
-                format: 'iife'
+                file: path + '/' + fileName + '.js',
+                format: 'iife',
+                sourcemap: 'inline'
             });
 
             isDone = true;

@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/guardian/podcards#readme",
   "devDependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8",
     "aws-sdk": "^2.5.0",
     "browser-sync": "^2.24.6",
     "deasync": "^0.1.9",
@@ -42,6 +43,7 @@
     "node-watch": "^0.4.0",
     "rollup": "^0.67.3",
     "rollup-plugin-babel-minify": "^6.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "sass-mq": "^5.0.0",
     "stevedore": "^0.1.4",
