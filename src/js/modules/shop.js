@@ -36,6 +36,7 @@ export default {
 
         draggableItems.on('drag:stop', (event) => {
             $source.removeClass('is-selected');
+            $('.uit-shop__basket').removeClass('is-above');
 
             if (isOverBasket) {
                 this.addToBasket($source);
