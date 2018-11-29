@@ -26,7 +26,8 @@ export default {
         });
 
         draggableItems.on('drag:move', (event) => {
-            isOverBasket = $(event.sensorEvent.target).hasClass('uit-shop__basket');
+            isOverBasket = $(event.sensorEvent.target).parent('.uit-shop__basket') || $(event.sensorEvent.target).hasClass('.uit-shop__basket');
+
             if (isOverBasket) {
                 $('.uit-shop__basket').addClass('is-above');
             } else {
@@ -49,11 +50,8 @@ export default {
     },
 
     addToBasket($item) {
+        $('.uit-shop__item--basket-' + basket.length).html($item.html());
         $item.addClass('is-in-basket');
         basket.push($item.data('item'));
-
-        basket.forEach((item, i) => {
-            $('.uit-shop__basket-item--' + i).text(item);
-        });
     }
 };

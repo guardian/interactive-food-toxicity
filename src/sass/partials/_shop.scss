@@ -35,6 +35,7 @@
 }
 
 .uit-shop__basket {
+    position: relative;
     margin: 12px 0;
     height: 120px;
     background-color: $c-off-white;
@@ -45,4 +46,14 @@
     &.is-above {
         transform: scale(1.1);
     }
+}
+
+.uit-shop__basket-trigger-area {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
 }
