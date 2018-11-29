@@ -1,6 +1,7 @@
 import draggable from '@shopify/draggable';
 
 let isOverBasket = false,
+    basket = [],
     $source;
 
 export default {
@@ -22,15 +23,28 @@ export default {
 
         items.on('drag:move', (event) => {
             isOverBasket = $(event.sensorEvent.target).hasClass('uit-shop__basket');
+            if (isOverBasket) {
+                $('.uit-shop__basket').addClass('is-above');
+            } else {
+                $('.uit-shop__basket').removeClass('is-above');
+            }
         });
 
         items.on('drag:stop', (event) => {
             $source.removeClass('is-selected');
 
             if (isOverBasket) {
-                $source.addClass('is-in-basket');
+                this.addToBasket($source);
             }
-            console.log(isOverBasket);
+        });
+    },
+
+    addToBasket($item) {
+        $item.addClass('is-in-basket');
+        basket.push($item.data('item'));
+
+        basket.forEach((item, i) => {
+            $('.uit-shop__basket-item--' + i).text(item);
         });
     }
 };

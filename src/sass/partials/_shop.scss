@@ -1,7 +1,5 @@
 .uit-shop__items {
-    margin: 12px 0;
-    padding: 0;
-    list-style: none;
+    padding: 12px 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +14,11 @@
     background-color: $c-red;
     transition: opacity 0.5s linear;
 
-    &.is-selected {
+    &.draggable-source--is-dragging {
+        opacity: 0.5;
+    }
+
+    &.is-in-basket {
         opacity: 0.2;
     }
 }
