@@ -58,6 +58,10 @@ export default {
             this.removeFromBasket($(e.currentTarget).parent());
         });
 
+        if (basket.length != 0){
+            $('.uit-shop__button').css('opacity', '1');
+        }
+
         console.log('add');
         console.log(basket);
     },
@@ -68,6 +72,10 @@ export default {
         $item.empty();
         $item.removeAttr('data-item');
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
+
+        if (basket.length == 0){
+            $('.uit-shop__button').css('opacity', '0');
+        }
 
         console.log('remove');
         console.log(basket);
