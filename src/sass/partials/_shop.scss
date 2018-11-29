@@ -6,7 +6,8 @@
 }
 
 .uit-shop__item {
-    z-index: 20;
+    position: relative;;
+    z-index: 2;
     width: 120px;
     margin-right: 20px;
     margin-bottom: 12px;
@@ -21,9 +22,26 @@
     }
 }
 
+.uit-shop__item-delete {
+    position: absolute;;
+    top: -8px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+    border: $c-red 1px solid;
+    border-radius: 16px;
+    background-color: $c-white;
+    display: none;
+
+    svg {
+        width: 100%;
+        fill: $c-red;
+    }
+}
+
 .uit-shop__item-image {
     max-width: 100%;
-    display: block;;
+    display: block;
 }
 
 .uit-shop__item-name {
@@ -55,6 +73,7 @@
         top: 0;
         bottom: 0;
         border-bottom: 1px solid $c-light-grey;
+        pointer-events: none;
     }
 
     &:before {
@@ -69,5 +88,9 @@
         right: 0;
         border-right: 1px solid $c-light-grey;
         transform: skewX(-10deg);
+    }
+
+    .uit-shop__item-delete {
+        display: block;
     }
 }

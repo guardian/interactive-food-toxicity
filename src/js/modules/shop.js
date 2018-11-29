@@ -44,14 +44,36 @@ export default {
             }
         });
 
-        $('.uit-shop__item').click((e) => {
+        $('.uit-shop__items--shelf .uit-shop__item').click((e) => {
             this.addToBasket($(e.currentTarget));
-        })
+        });
     },
 
     addToBasket($item) {
-        $('.uit-shop__item--basket-' + basket.length).html($item.html());
+        $(this.findEmptySlotInBasket()).html($item.html()).data('item', $item.data('item'));
         $item.addClass('is-in-basket');
         basket.push($item.data('item'));
+
+        $('.uit-shop__item-delete').one('click', (e) => {
+            this.removeFromBasket($(e.currentTarget).parent());
+        });
+
+        console.log('add');
+        console.log(basket);
+    },
+
+    removeFromBasket($item) {
+        const itemName = $item.data('item');
+        basket = basket.filter(item => item !== itemName);
+        $item.empty();
+        $item.removeAttr('data-item');
+        $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
+
+        console.log('remove');
+        console.log(basket);
+    },
+
+    findEmptySlotInBasket() {
+        return $('.uit-shop__basket .uit-shop__item:empty:first');
     }
 };
