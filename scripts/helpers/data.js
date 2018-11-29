@@ -25,13 +25,8 @@ function fetchData(callback) {
 }
 
 function sortResults(data) {
-    if (data.length === 0) {
-        data = data[0]
-    } else {
-        data = {
-            'sheet1': data[0],
-            'sheet2': data[1]
-        }
+    data = {
+        'items': data[0]
     }
 
     return data;
@@ -43,6 +38,8 @@ module.exports = function getData() {
     fetchData(function(result) {
         data = result;
         data = sortResults(data);
+
+        console.log(data);
 
         isDone = true;
     });

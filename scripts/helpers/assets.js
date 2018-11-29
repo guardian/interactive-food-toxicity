@@ -117,6 +117,10 @@ module.exports = {
                 return output;
         });
 
+        handlebars.registerHelper('handlise', function(string) {
+            return string.replace(/ /g, '-').toLowerCase();
+        });
+
         handlebars.registerHelper('if_even', function(conditional, options) {
          if((conditional % 2) == 0) {
            return options.fn(this);
