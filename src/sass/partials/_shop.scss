@@ -37,23 +37,37 @@
 .uit-shop__basket {
     position: relative;
     margin: 12px 0;
-    height: 120px;
-    background-color: $c-off-white;
-    border: 1px solid $c-light-grey;
+    min-height: 120px;
+    margin: 0 20px 12px;
     transition: transform 0.4s linear;
     transform-origin: bottom center;
 
     &.is-above {
+        background-color: $c-off-white;
         transform: scale(1.1);
     }
-}
 
-.uit-shop__basket-trigger-area {
-    position: absolute;
-    z-index: 20;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    pointer-events: none;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        bottom: 0;
+        border-bottom: 1px solid $c-light-grey;
+    }
+
+    &:before {
+        left: 0;
+        right: 50%;
+        border-left: 1px solid $c-light-grey;
+        transform: skewX(10deg);
+    }
+
+    &:after {
+        left: 50%;
+        right: 0;
+        border-right: 1px solid $c-light-grey;
+        transform: skewX(-10deg);
+    }
 }

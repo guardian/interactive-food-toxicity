@@ -26,7 +26,7 @@ export default {
         });
 
         draggableItems.on('drag:move', (event) => {
-            isOverBasket = $(event.sensorEvent.target).parent('.uit-shop__basket') || $(event.sensorEvent.target).hasClass('.uit-shop__basket');
+            isOverBasket = $(event.sensorEvent.target).parents('.uit-shop__basket').length > 0 || $(event.sensorEvent.target).hasClass('uit-shop__basket');
 
             if (isOverBasket) {
                 $('.uit-shop__basket').addClass('is-above');
