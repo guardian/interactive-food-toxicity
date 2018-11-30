@@ -14,6 +14,9 @@ export default {
         draggableItems = new draggable.Draggable(document.querySelectorAll('.uit-shop__items'), {
             draggable: '.uit-shop__item',
             delay: 200,
+            mirror: {
+                constrainDimensions: true,
+            }
         });
 
         this.bindings();

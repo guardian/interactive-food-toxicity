@@ -1,20 +1,39 @@
-.uit-shop__items--shelf {
-    margin-bottom: 20px;
-}
-
 .uit-shop__items {
+    position: relative;
     padding: 12px 0;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 20px;
     grid-row-gap: 20px;
     grid-template-rows: auto;
 
     @include mq(desktop) {
         grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 20px;
         grid-row-gap: 12px;
+    }
+}
+
+.uit-shop__items--shelf {
+    margin-bottom: 32px;
+    border-left: 1px solid $c-light-grey;
+    border-right: 1px solid $c-light-grey;
+    padding-top: 20px;
+
+    @include mq(desktop) {
+        padding-top: 40px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: -1px;
+        right: -1px;
+        height: 20px;
+        z-index: 24;
+        pointer-events: none;
+        background-color: $c-off-white;
+        border: 1px solid $c-light-grey;
     }
 }
 
@@ -22,7 +41,6 @@
     position: relative;
     z-index: 2;
     transition: opacity 0.5s linear;
-    max-width: 120px;
 
     &.draggable-source--is-dragging {
         opacity: 0.5;
@@ -31,11 +49,6 @@
     &.is-in-basket {
         opacity: 0.2;
         pointer-events: none;
-    }
-
-    &:hover {
-        opacity: 0.2;
-        transition: opacity 0.2s linear;
     }
 }
 
@@ -57,17 +70,30 @@
 }
 
 .uit-shop__item-image {
-    max-width: 100%;
+    max-width: 80%;
     display: block;
+    margin: 0 auto;
+}
+
+.uit-shop__item-shelf {
+    border-top: 1px solid $c-light-grey;
+    border-bottom: 1px solid $c-light-grey;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-off-white;
 }
 
 .uit-shop__item-name {
     font-family: 'Guardian Sans Web';
-    text-align: center;
     font-size: 16px;
     color: $c-black;
-    display: block;
-    background-color: $c-light-brown;
+    display: inline-block;
+    padding: 0 4px;
+    // margin: -1px 0;
+    background-color: $c-white;
 }
 
 .uit-shop__basket {
