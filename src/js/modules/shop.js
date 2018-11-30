@@ -49,6 +49,10 @@ export default {
             this.addToBasket($(e.currentTarget));
             this.addToReceipt($(e.currentTarget));
         });
+
+        $('.uit-shop__button').click((e) => {
+            $('.uit-shop__receipt').addClass('is-activated');
+        });
     },
 
     addToBasket($item) {
@@ -60,8 +64,11 @@ export default {
             this.removeFromBasket($(e.currentTarget).parent());
         });
 
-        if (basket.length != 0){
-            $('.uit-shop__button').css('opacity', '1');
+        if (basket.length > 0){
+            $('.uit-shop__button').addClass('is-activated');
+        } else {
+            $('.uit-shop__button').removeClass('is-activated');
+            $('.uit-shop__receipt').removeClass('is-activated');
         }
 
         console.log('add');
@@ -75,8 +82,11 @@ export default {
         $item.removeAttr('data-item');
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
 
-        if (basket.length == 0){
-            $('.uit-shop__button').css('opacity', '.2');
+        if (basket.length > 0){
+            $('.uit-shop__button').addClass('is-activated');
+        } else {
+            $('.uit-shop__button').removeClass('is-activated');
+            $('.uit-shop__receipt').removeClass('is-activated');
         }
 
         this.removeFromReceipt(itemName);

@@ -121,4 +121,8 @@
     opacity: .2;
     transition: opacity 1s;
     padding-right: 15px;
+
+    &.is-activated {
+        opacity: 1;
+    }
 }
