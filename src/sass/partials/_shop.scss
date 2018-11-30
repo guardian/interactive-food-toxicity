@@ -1,21 +1,28 @@
 .uit-shop__items--shelf {
-    border-bottom: 2px solid $c-light-grey;
+    margin-bottom: 20px;
 }
 
 .uit-shop__items {
     padding: 12px 0;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-rows: auto;
+
+    @include mq(desktop) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 12px;
+    }
 }
 
 .uit-shop__item {
-    position: relative;;
+    position: relative;
     z-index: 2;
-    width: 120px;
-    margin-right: 20px;
-    margin-bottom: 12px;
     transition: opacity 0.5s linear;
+    max-width: 120px;
 
     &.draggable-source--is-dragging {
         opacity: 0.5;
@@ -23,11 +30,17 @@
 
     &.is-in-basket {
         opacity: 0.2;
+        pointer-events: none;
+    }
+
+    &:hover {
+        opacity: 0.2;
+        transition: opacity 0.2s linear;
     }
 }
 
 .uit-shop__item-delete {
-    position: absolute;;
+    position: absolute;
     top: -8px;
     right: -8px;
     width: 32px;
@@ -54,6 +67,7 @@
     font-size: 16px;
     color: $c-black;
     display: block;
+    background-color: $c-light-brown;
 }
 
 .uit-shop__basket {
@@ -97,10 +111,18 @@
     .uit-shop__item-delete {
         display: block;
     }
+
+    .uit-shop__item-name {
+        opacity: 0;
+    }
 }
 
 .uit-shop__button {
     opacity: .2;
     transition: opacity 1s;
     padding-right: 15px;
+
+    &.is-activated {
+        opacity: 1;
+    }
 }
