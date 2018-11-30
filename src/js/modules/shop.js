@@ -74,7 +74,7 @@ export default {
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
 
         if (basket.length == 0){
-            $('.uit-shop__button').css('opacity', '0');
+            $('.uit-shop__button').css('opacity', '.2');
         }
 
         console.log('remove');
