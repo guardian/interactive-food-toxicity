@@ -41,11 +41,13 @@ export default {
 
             if (isOverBasket) {
                 this.addToBasket($source);
+                this.addToReceipt($source);
             }
         });
 
         $('.uit-shop__items--shelf .uit-shop__item').click((e) => {
             this.addToBasket($(e.currentTarget));
+            this.addToReceipt($(e.currentTarget));
         });
     },
 
@@ -62,12 +64,6 @@ export default {
             $('.uit-shop__button').css('opacity', '1');
         }
 
-        $('.uit-shop__receipt')
-        .append('<span class='+
-        $item.data('item') +
-        '>' +
-        $item.data('item')+'</span>');
-
         console.log('add');
         console.log(basket);
     },
@@ -79,14 +75,26 @@ export default {
         $item.removeAttr('data-item');
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
 
-        $('.' + itemName).remove();
-
         if (basket.length == 0){
             $('.uit-shop__button').css('opacity', '.2');
         }
 
+        this.removeFromReceipt(itemName);
+
         console.log('remove');
         console.log(basket);
+    },
+
+    addToReceipt($item) {
+        $('.uit-shop__receipt')
+        .append('<div class='+
+        $item.data('item') +
+        '>' +
+        $item.data('item')+'</div>');
+    },
+
+    removeFromReceipt(itemName) {
+        $('.' + itemName).remove();
     },
 
     findEmptySlotInBasket() {
