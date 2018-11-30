@@ -62,6 +62,12 @@ export default {
             $('.uit-shop__button').css('opacity', '1');
         }
 
+        $('.uit-shop__receipt')
+        .append('<span class='+
+        $item.data('item') +
+        '>' +
+        $item.data('item')+'</span>');
+
         console.log('add');
         console.log(basket);
     },
@@ -72,6 +78,8 @@ export default {
         $item.empty();
         $item.removeAttr('data-item');
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
+
+        $('.' + itemName).remove();
 
         if (basket.length == 0){
             $('.uit-shop__button').css('opacity', '.2');
