@@ -1,0 +1,43 @@
+.uit-items {
+    display: none;
+
+    &.is-activated {
+        display: block;
+    }
+
+    .uit-content {
+        padding: 12px 0;
+    }
+}
+
+.uit-items__receipt {
+    padding: 12px 6px;
+    background-color: $c-off-white;
+    border: 1px solid $c-light-grey;
+}
+
+.uit-items__item {
+    display: flex;
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid $c-light-grey;
+}
+
+.uit-items__item-image {
+    width: 120px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    display: block;
+    align-self: flex-start;
+}
+
+.uit-items__item-name {
+    font-family: 'Guardian Egyptian Web';
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.uit-items__item-description {
+    margin: 0;
+}

@@ -15,7 +15,7 @@ module.exports = {
         let isDone = false;
 
         (async function () {
-            var bundle = await rollup.rollup({
+            let rollupOptions = {
                 input: './src/js/' + fileName + '.js',
                 plugins: [
                     resolve(),
@@ -25,17 +25,20 @@ module.exports = {
                         }
                     })
                 ]
-            });
+            };
 
-            // minify({
-            //     sourceMap: true,
-            //     comments: false
-            // })
+            if (isDeploy) {
+                rollupOptions.plugins.push(minify({
+                    comments: false
+                }))
+            }
+
+            var bundle = await rollup.rollup(rollupOptions);
 
             await bundle.write({
                 file: path + '/' + fileName + '.js',
-                format: 'iife',
-                sourcemap: 'inline'
+                format: 'umd',
+                sourcemap: isDeploy ? false : 'inline'
             });
 
             isDone = true;

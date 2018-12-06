@@ -1,6 +1,6 @@
 import draggable from '@shopify/draggable';
 
-const basketLimit = 5;
+const basketLimit = 3;
 
 let isOverBasket = false,
     basket = [],
@@ -10,6 +10,7 @@ let isOverBasket = false,
 export default {
     init() {
         this.initDragging();
+        this.updateLabel();
     },
 
     initDragging() {
@@ -46,17 +47,15 @@ export default {
 
             if (isOverBasket) {
                 this.addToBasket($source);
-                this.addToReceipt($source);
             }
         });
 
         $('.uit-shop__items--shelf .uit-shop__item').click((e) => {
             this.addToBasket($(e.currentTarget));
-            this.addToReceipt($(e.currentTarget));
         });
 
         $('.uit-shop__button').click((e) => {
-            $('.uit-shop__receipt').addClass('is-activated');
+            this.showResults();
         });
     },
 
@@ -73,7 +72,7 @@ export default {
             $('.uit-shop__button').addClass('is-activated');
         } else {
             $('.uit-shop__button').removeClass('is-activated');
-            $('.uit-shop__receipt').removeClass('is-activated');
+            $('.uit-items').removeClass('is-activated');
         }
 
         this.updateLabel();
@@ -90,19 +89,10 @@ export default {
             $('.uit-shop__button').addClass('is-activated');
         } else {
             $('.uit-shop__button').removeClass('is-activated');
-            $('.uit-shop__receipt').removeClass('is-activated');
+            $('.uit-items').removeClass('is-activated');
         }
 
         this.updateLabel();
-        this.removeFromReceipt(itemName);
-    },
-
-    addToReceipt($item) {
-        $('.uit-shop__receipt').append('<div class=' + $item.data('item') + '>' + $item.data('item')+'</div>');
-    },
-
-    removeFromReceipt(itemName) {
-        $('.' + itemName).remove();
     },
 
     updateLabel() {
@@ -113,5 +103,18 @@ export default {
 
     findEmptySlotInBasket() {
         return $('.uit-shop__basket .uit-shop__item:empty:first');
+    },
+
+    showResults() {
+        $('.uit-items').addClass('is-activated');
+
+        for (var i in basket) {
+            const $item = $('.uit-items__item[data-item=' + basket[i] + ']');
+
+            console.log($item);
+
+            $('.uit-items__receipt').append($item[0].outerHTML);
+            $item.remove();
+        }
     }
 };
