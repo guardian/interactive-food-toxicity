@@ -11,6 +11,10 @@
         grid-template-columns: repeat(4, 1fr);
         grid-row-gap: 12px;
     }
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .uit-shop__items--shelf {
@@ -53,6 +57,10 @@
 
     &.draggable-mirror {
         z-index: 40;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
 
