@@ -3,9 +3,11 @@
         <div class='uit-content'>
             <div class='uit-shop__items uit-shop__items--shelf'>
                 {{#each items}}
-                    <div class='uit-shop__item' data-item='{{ handlise food }}'>
-                        <div class='uit-shop__item-delete'>{{> icons/close }}</div>
-                        <img class='uit-shop__item-image' src='{{ path }}/assets/{{ handlise food }}.jpg' />
+                    <div class='uit-shop__item-wrapper'>
+                        <div class='uit-shop__item' data-item='{{ handlise food }}'>
+                            <div class='uit-shop__item-delete'>{{> icons/close }}</div>
+                            <img class='uit-shop__item-image' src='{{ path }}/assets/{{ handlise food }}.jpg' />
+                        </div>
                         <div class='uit-shop__item-shelf'>
                             <span class='uit-shop__item-name'>{{ food }}</span>
                         </div>

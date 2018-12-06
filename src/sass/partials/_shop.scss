@@ -50,6 +50,10 @@
         opacity: 0.2;
         pointer-events: none;
     }
+
+    &.draggable-mirror {
+        z-index: 40;
+    }
 }
 
 .uit-shop__item-delete {
@@ -105,7 +109,6 @@
     transform-origin: bottom center;
 
     &.is-above {
-        background-color: $c-off-white;
         transform: scale(1.1);
     }
 
