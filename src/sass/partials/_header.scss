@@ -2,15 +2,50 @@
     overflow: auto;
 }
 
+.uit-header__tag {
+    font-family: 'Guardian Egyptian Web';
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    padding-top: 4px;
+
+    @include mq(leftCol) {
+        position: absolute;
+        left: -160px;
+        width: 140px;
+        top: 4px;
+    }
+
+    @include mq(wide) {
+        left: -240px;
+        width: 220px;
+    }
+}
+
+.uit-header__tag-link {
+    color: $c-red;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid $c-red;
+    }
+}
+
 .uit-header__headline {
-    padding: 6px 0;
+    padding-bottom: 12px;
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.1;
 
     @include mq(tablet) {
         font-size: 48px;
+    }
+
+    @include mq(leftCol) {
+        padding-top: 3px;
     }
 }
 
