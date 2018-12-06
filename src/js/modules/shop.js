@@ -1,5 +1,7 @@
 import draggable from '@shopify/draggable';
 
+const basketLimit = 5;
+
 let isOverBasket = false,
     basket = [],
     $source,
@@ -74,8 +76,7 @@ export default {
             $('.uit-shop__receipt').removeClass('is-activated');
         }
 
-        console.log('add');
-        console.log(basket);
+        this.updateLabel();
     },
 
     removeFromBasket($item) {
@@ -92,22 +93,22 @@ export default {
             $('.uit-shop__receipt').removeClass('is-activated');
         }
 
+        this.updateLabel();
         this.removeFromReceipt(itemName);
-
-        console.log('remove');
-        console.log(basket);
     },
 
     addToReceipt($item) {
-        $('.uit-shop__receipt')
-        .append('<div class='+
-        $item.data('item') +
-        '>' +
-        $item.data('item')+'</div>');
+        $('.uit-shop__receipt').append('<div class=' + $item.data('item') + '>' + $item.data('item')+'</div>');
     },
 
     removeFromReceipt(itemName) {
         $('.' + itemName).remove();
+    },
+
+    updateLabel() {
+        const spacesLeftInBasket = basketLimit - basket.length;
+        const text = spacesLeftInBasket === 1 ? '1 item' : spacesLeftInBasket + ' items';
+        $('.uit-shop__basket-count').text(text);
     },
 
     findEmptySlotInBasket() {
