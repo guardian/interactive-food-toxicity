@@ -69,7 +69,7 @@ export default {
             this.removeFromBasket($(e.currentTarget).parent());
         });
 
-        if (basket.length > 0){
+        if (basket.length === basketLimit) {
             $('.uit-shop__button').addClass('is-activated');
         } else {
             $('.uit-shop__button').removeClass('is-activated');

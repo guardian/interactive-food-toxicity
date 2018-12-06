@@ -158,8 +158,10 @@
     opacity: .2;
     transition: opacity 1s;
     padding-right: 15px;
+    pointer-events: none;
 
     &.is-activated {
         opacity: 1;
+        pointer-events: auto;
     }
 }
