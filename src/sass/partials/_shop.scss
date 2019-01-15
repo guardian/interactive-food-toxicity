@@ -85,6 +85,7 @@
     max-width: 80%;
     display: block;
     margin: 0 auto;
+    max-height: 100px;
 }
 
 .uit-shop__item-shelf {
@@ -95,7 +96,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $c-off-white;
+    background-color: $c-black;
+    height: 2px;
+    margin-bottom: 40px;
 }
 
 .uit-shop__item-name {

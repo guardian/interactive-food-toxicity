@@ -36,12 +36,13 @@
 .uit-header__headline {
     padding-bottom: 12px;
     font-family: 'Guardian Egyptian Web';
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 1.1;
+    font-weight: 200;
+    font-size: 36px;
+    line-height: .95;
 
     @include mq(tablet) {
         font-size: 48px;
+        line-height: 1.1;
     }
 
     @include mq(leftCol) {
