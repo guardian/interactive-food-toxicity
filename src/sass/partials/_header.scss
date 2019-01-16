@@ -55,6 +55,18 @@
     color: $c-red;
 }
 
+.uit-header__image {
+    max-height: 100%;
+    margin-left: -10px;
+    max-width: 105%;
+
+    @include mq(tablet) {
+        max-height: 90%;
+        max-width: 90%;
+    }
+
+}
+
 .uit-header__standfirst {
     padding: 3px 0 0;
     font-family: 'Guardian Egyptian Web';
