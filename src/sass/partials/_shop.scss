@@ -21,21 +21,17 @@
     margin-bottom: 32px;
     border-left: 1px solid $c-light-grey;
     border-right: 1px solid $c-light-grey;
-    padding-top: 20px;
+    padding-top: 40px;
 
     @include mq(tablet) {
         border-left: 10px solid $c-dark-brown;
         border-right: 10px solid $c-dark-brown;
     }
-
-    @include mq(desktop) {
-        padding-top: 40px;
-    }
-
+    
     &:before {
         content: '';
         position: absolute;
-        top: 8px;
+        top: 0px;
         left: -1px;
         right: -1px;
         height: 20px;
@@ -43,6 +39,10 @@
         pointer-events: none;
         background-color: $c-off-white;
         border: 1px solid $c-light-grey;
+
+        @include mq(tablet) {
+            top: 8px;
+        }
     }
 }
 
