@@ -1,12 +1,11 @@
 .uit-related {
     position: relative;
-    background-color: $c-white;
 
     .uit-container {
         padding-bottom: 24px;
 
         @include mq(tablet) {
-            border-top: 1px solid $c-light-grey;
+            border-top: 1px solid $c-dark-grey;
         }
     }
 }
@@ -15,7 +14,7 @@
     margin: auto;
     clear: both;
     margin-bottom: 12px;
-    border-top: 1px solid $c-light-grey;
+    border-top: 1px solid $c-dark-grey;
 
     @include mq(tablet) {
         border-top: none;
@@ -52,7 +51,7 @@
             top: -3px;
             width: 1px;
             height: 1.25em;
-            background-color: $c-light-grey;
+            background-color: $c-dark-grey;
         }
     }
 }
