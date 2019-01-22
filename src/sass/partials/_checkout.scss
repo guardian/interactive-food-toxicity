@@ -1,5 +1,21 @@
 $duration: 4s;
 
+.uit-checkout-wrapper {
+    width: calc(100% + 10px);
+    margin-left: -10px;
+    overflow: hidden;
+
+    @include mq(mobileLandscape) {
+        width: calc(100% + 20px);
+        margin-left: -20px;
+    }
+
+    @include mq(leftCol) {
+        width: calc(100% - 9px);
+        margin-left: -9px;
+    }
+}
+
 .uit-checkout {
     position: relative;
     height: 0;
