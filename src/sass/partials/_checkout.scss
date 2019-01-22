@@ -1,0 +1,88 @@
+$duration: 4s;
+
+.uit-checkout {
+    position: relative;
+    height: 0;
+    padding-top: 60%;
+}
+
+.uit-checkout__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.uit-checkout__top {
+    z-index: 5;
+    background-image: url('{{ path }}/assets/header/top.png');
+}
+
+@keyframes scan {
+    0%, 20%, 30%, 100% {
+        background-color: $c-white;
+    }
+
+    23%, 27% {
+        background-color: $c-red;
+    }
+}
+
+.uit-checkout__scan {
+    position: absolute;
+    left: 38%;
+    top: 25%;
+    width: 6%;
+    height: 3.5%;
+    z-index: 4;
+    animation: scan $duration linear infinite;
+}
+
+@keyframes face {
+    0%, 25%, 50%, 75%, 100% {
+        background-image: url('{{ path }}/assets/header/face--1.png');
+    }
+    26%, 49% {
+        background-image: url('{{ path }}/assets/header/face--2.png');
+    }
+    76%, 99% {
+        background-image: url('{{ path }}/assets/header/face--3.png');
+    }
+}
+
+.uit-checkout__face {
+    z-index: 3;
+    animation: face ($duration * 2) linear infinite;
+}
+
+.uit-checkout__base {
+    z-index: 1;
+    background-image: url('{{ path }}/assets/header/base.jpg');
+}
+
+@keyframes buyItem {
+    0% {
+        left: 0px;
+    }
+    70%, 73% {
+        left: 92%;
+        top: 25%;
+    }
+    100% {
+        left: 92%;
+        top: 70%;
+    }
+}
+
+.uit-checkout__item {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 2;
+    width: 16%;
+    animation: buyItem 4s linear infinite;
+}
