@@ -48,6 +48,12 @@
     &:focus {
         outline: none;
     }
+
+    &:hover {
+        transform: scale(1.15);
+        transition: all .3s;
+        transform-origin: bottom;
+    }
 }
 
 .uit-shop__item-delete {
@@ -146,6 +152,10 @@
     .uit-shop__item-name {
         opacity: 0;
     }
+}
+
+.uit-shop__basket-image {
+    max-width: 60%;
 }
 
 .uit-shop__button {
