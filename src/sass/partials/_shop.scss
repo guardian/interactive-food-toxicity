@@ -50,9 +50,11 @@
     }
 
     &:hover {
-        transform: scale(1.15);
-        transition: all .3s;
-        transform-origin: bottom;
+        @include mq(desktop) {
+            transform: scale(1.15);
+            transition: all .3s;
+            transform-origin: bottom;
+        }
     }
 }
 

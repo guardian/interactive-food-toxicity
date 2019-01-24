@@ -14,6 +14,10 @@
     padding: 12px 6px;
     background-color: $c-off-white;
     border: 1px solid $c-light-grey;
+
+    .uit-items__item-name {
+        color: $c-red;
+    }
 }
 
 .uit-items__item {
@@ -24,7 +28,7 @@
 }
 
 .uit-items__item-image {
-    width: 120px;
+    width: 100px;
     margin-right: 20px;
     flex-shrink: 0;
     display: block;
@@ -34,7 +38,7 @@
 .uit-items__item-name {
     font-family: 'Guardian Egyptian Web';
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0;
 }
 

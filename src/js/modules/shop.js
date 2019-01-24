@@ -64,7 +64,7 @@ export default {
         $item.addClass('is-in-basket');
         basket.push($item.data('item'));
 
-        $('.uit-shop__item-delete').one('click', (e) => {
+        $('.uit-shop__item-delete').on('click', (e) => {
             this.removeFromBasket($(e.currentTarget).parent());
         });
 
@@ -74,6 +74,8 @@ export default {
             $('.uit-shop__button').removeClass('is-activated');
             $('.uit-items').removeClass('is-activated');
         }
+
+        $('.uit-cart__mobile span').html('(' + basket.length + ')');
 
         this.updateLabel();
     },
@@ -91,6 +93,8 @@ export default {
             $('.uit-shop__button').removeClass('is-activated');
             $('.uit-items').removeClass('is-activated');
         }
+
+        $('.uit-cart__mobile span').html('(' + basket.length + ')');
 
         this.updateLabel();
     },
