@@ -76,10 +76,6 @@ $duration: 4s;
     }
 }
 
-.uit-checkout__items {
-    //animation: buyItem 4s linear infinite, changeItem 16s linear infinite;
-}
-
 .uit-checkout__face {
     z-index: 3;
     animation: face ($duration * 2) linear infinite;
