@@ -121,7 +121,7 @@ module.exports = {
         });
 
         handlebars.registerHelper('handlise', function(string) {
-            return string.replace(/ /g, '-').toLowerCase();
+            return string.replace(/ /g, '-').replace(/'/g, '').toLowerCase();
         });
 
         handlebars.registerHelper('if_even', function(conditional, options) {
