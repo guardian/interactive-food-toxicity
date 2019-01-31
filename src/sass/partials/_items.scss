@@ -50,7 +50,7 @@
     display: block;
     position: fixed;
     z-index: 99;
-    top: 0px;
+    bottom: 0px;
     opacity: 0;
     width: 100%;
     background-color: $c-white;
@@ -58,11 +58,11 @@
     font-size: 24px;
     font-weight: 700;
 
-    &.is-visible {
-        opacity: 1;
-    }
-
     @include mq(tablet) {
         display: none;
+    }
+
+    &.is-visible {
+        opacity: 1;
     }
 }
