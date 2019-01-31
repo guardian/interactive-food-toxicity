@@ -87,10 +87,10 @@ $count: $count / 3; // ensures that two items are visible at once
     }
     #{(100 / $count) * 0.7%}, #{(100 / $count) * 0.73%} {
         left: 92%;
-        top: 25%;
+        top: 25.5%;
     }
     #{(100 / $count) * 1%} {
-        left: 92%;
+        left: 92.5%;
         top: 70%;
     }
     #{(100 / $count) * 1.0001%} {
