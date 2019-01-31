@@ -25,7 +25,8 @@
 .uit-shop__item {
     position: relative;
     z-index: 2;
-    transition: opacity 0.5s linear;
+    transition: opacity 0.3s linear, transform 0.3s linear;
+    transform-origin: bottom;
     height: 80px;
 
     @include mq(tablet) {
@@ -52,8 +53,6 @@
     &:hover {
         @include mq(desktop) {
             transform: scale(1.15);
-            transition: all .3s;
-            transform-origin: bottom;
         }
     }
 }
@@ -88,26 +87,12 @@
 }
 
 .uit-shop__item-shelf {
-    border-top: 1px solid $c-light-grey;
-    border-bottom: 1px solid $c-light-grey;
     position: relative;
     z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: $c-black;
     height: 2px;
+    margin-top: -2px;
     margin-bottom: 10px;
-}
-
-.uit-shop__item-name {
-    font-family: 'Guardian Sans Web';
-    font-size: 16px;
-    color: $c-black;
-    display: inline-block;
-    padding: 0 4px;
-    background-color: $c-white;
-    display: none;
 }
 
 .uit-shop__basket {
@@ -120,31 +105,6 @@
 
     &.is-above {
         transform: scale(1.1);
-    }
-
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        z-index: 20;
-        top: 0;
-        bottom: 0;
-        border-bottom: 1px solid $c-light-grey;
-        pointer-events: none;
-    }
-
-    &:before {
-        left: 0;
-        right: 50%;
-        border-left: 1px solid $c-light-grey;
-        transform: skewX(10deg);
-    }
-
-    &:after {
-        left: 50%;
-        right: 0;
-        border-right: 1px solid $c-light-grey;
-        transform: skewX(-10deg);
     }
 
     .uit-shop__item-delete {

@@ -6,13 +6,12 @@
             </div>
             <div class='uit-shop__items uit-shop__items--shelf'>
                 {{#each items}}
-                    <div class='uit-shop__item-wrapper'>
+                    <div class='uit-shop__item-wrapper' title='{{ food }}'>
                         <div class='uit-shop__item' data-item='{{ handlise food }}'>
                             <div class='uit-shop__item-delete'>{{> icons/close }}</div>
                             <img class='uit-shop__item-image' src='{{ ../path }}/assets/{{ handlise food }}.png' />
                         </div>
                         <div class='uit-shop__item-shelf'>
-                            <span class='uit-shop__item-name'>{{ food }}</span>
                         </div>
                     </div>
                 {{/each}}
