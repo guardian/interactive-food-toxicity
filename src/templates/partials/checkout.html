@@ -5,8 +5,9 @@
         <div class='uit-checkout__scan'></div>
 
         <div class='uit-checkout__items'>
-            <div class='uit-checkout__item'>
-            </div>
+            {{#each items}}
+                <img class='uit-checkout__item uit-checkout__item--{{ @index }}' src='{{ ../ path }}/assets/{{ handlise food }}.png'  />
+            {{/each}}
         </div>
 
         <div class='uit-checkout__layer uit-checkout__face'></div>

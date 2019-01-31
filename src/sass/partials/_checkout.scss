@@ -1,4 +1,5 @@
-$duration: 4s;
+$duration: 1s;
+$count: 20;
 
 .uit-checkout-wrapper {
     width: calc(100% + 10px);
@@ -62,22 +63,41 @@ $duration: 4s;
     top: 25%;
     left: 0;
     transform: translateX(-100%);
-    z-index: 2;
+    z-index: 3;
     width: 16%;
-    background-image: url('{{ path }}/assets/spinach.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 0;
-    padding-top: 100%;
-    animation: buyItem 4s linear infinite, changeItem 16s linear infinite;
+    height: auto;
+    animation: buyItem $duration * $count linear infinite;
 
     img {
         opacity:0;
     }
 }
 
+@keyframes buyItem {
+    0% {
+        left: 0px;
+    }
+    #{(100 / $count) * 0.7%}, #{(100 / $count) * 0.73%} {
+        left: 92%;
+        top: 25%;
+    }
+    #{(100 / $count) * 1%} {
+        left: 92%;
+        top: 70%;
+    }
+    #{(100 / $count) * 1.0001%} {
+        left: 0px;
+    }
+}
+
+@for $i from 0 through 19 {
+    .uit-checkout__item--#{$i} {
+        animation-delay: -($duration) * $i;
+    }
+}
+
 .uit-checkout__face {
-    z-index: 3;
+    z-index: 2;
     animation: face ($duration * 2) linear infinite;
 }
 
@@ -92,37 +112,7 @@ $duration: 4s;
         background-image: url('{{ path }}/assets/header/face--3.png');
     }
 }
-
-@keyframes changeItem {
-    0%, 24% {
-        background-image: url('{{ path }}/assets/spinach.png');
-    }
-    25%, 49% {
-        background-image: url('{{ path }}/assets/ground-beef.png');
-    }
-    50%, 74% {
-        background-image: url('{{ path }}/assets/chicken.png');
-    }
-    75%, 100% {
-        background-image: url('{{ path }}/assets/milk.png');
-    }
-}
-
 .uit-checkout__base {
     z-index: 1;
     background-image: url('{{ path }}/assets/header/base.jpg');
-}
-
-@keyframes buyItem {
-    0% {
-        left: 0px;
-    }
-    70%, 73% {
-        left: 92%;
-        top: 25%;
-    }
-    100% {
-        left: 92%;
-        top: 70%;
-    }
 }
