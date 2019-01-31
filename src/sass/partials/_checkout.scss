@@ -39,11 +39,11 @@ $count: 20;
 }
 
 @keyframes scan {
-    0%, 20%, 30%, 100% {
+    0%, 20%, 26%, 100% {
         background-color: $c-white;
     }
 
-    23%, 27% {
+    20%, 25% {
         background-color: $c-red;
     }
 }
@@ -79,7 +79,7 @@ $count: 20;
     }
 }
 
-$count: $count / 3; // ensures that two items are visible at once
+$count: $count / 3; // ensures that three items are visible at once
 
 @keyframes buyItem {
     0% {
@@ -100,17 +100,17 @@ $count: $count / 3; // ensures that two items are visible at once
 
 .uit-checkout__face {
     z-index: 2;
-    animation: face ($duration * 2) linear infinite;
+    animation: face ($duration * 6) linear infinite;
 }
 
 @keyframes face {
-    0%, 25%, 50%, 75%, 100% {
+    0%, 25%, 40%, 75%, 90%, 100% {
         background-image: url('{{ path }}/assets/header/face--1.png');
     }
-    26%, 49% {
+    26%, 39% {
         background-image: url('{{ path }}/assets/header/face--2.png');
     }
-    76%, 99% {
+    76%, 89% {
         background-image: url('{{ path }}/assets/header/face--3.png');
     }
 }
