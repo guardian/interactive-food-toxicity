@@ -60,7 +60,7 @@ $count: 20;
 
 .uit-checkout__item {
     position: absolute;
-    top: 25%;
+    top: 25.5%;
     left: 0;
     transform: translateX(-100%);
     z-index: 3;
@@ -72,6 +72,14 @@ $count: 20;
         opacity:0;
     }
 }
+
+@for $i from 0 through $count {
+    .uit-checkout__item--#{$i} {
+        animation-delay: -($duration) * $i;
+    }
+}
+
+$count: $count / 3; // ensures that two items are visible at once
 
 @keyframes buyItem {
     0% {
@@ -87,12 +95,6 @@ $count: 20;
     }
     #{(100 / $count) * 1.0001%} {
         left: 0px;
-    }
-}
-
-@for $i from 0 through 19 {
-    .uit-checkout__item--#{$i} {
-        animation-delay: -($duration) * $i;
     }
 }
 
