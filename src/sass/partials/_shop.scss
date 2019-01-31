@@ -26,6 +26,7 @@
     position: relative;
     z-index: 2;
     transition: opacity 0.3s linear, transform 0.3s linear;
+    transform: scale(.9);
     transform-origin: bottom;
     height: 80px;
 
@@ -33,8 +34,28 @@
         height: 100px;
     }
 
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        transform: none;
+    }
+
+    .draggable-container--is-dragging &:hover {
+        transition: none;
+        transform: scale(.9);
+    }
+
     &.draggable-source--is-dragging {
         opacity: 0.5;
+        transform: none;
+        transition: none;
+
+        &:hover {
+            transform: none;
+            transition: none;
+        }
     }
 
     &.is-in-basket {
@@ -44,16 +65,7 @@
 
     &.draggable-mirror {
         z-index: 40;
-    }
-
-    &:focus {
-        outline: none;
-    }
-
-    &:hover {
-        @include mq(desktop) {
-            transform: scale(1.15);
-        }
+        transition: none;
     }
 }
 
