@@ -8,7 +8,7 @@
     },
     "remote": {
         "url": "https://interactive.guim.co.uk",
-        "path": "atoms/2019/1/food-toxicity",
+        "path": "atoms/2019/01/food-toxicity",
         "bucket": "gdn-cdn"
     }
 }
