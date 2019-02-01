@@ -25,10 +25,6 @@
     transform-origin: bottom;
     width: 100%;
 
-    @include mq(tablet) {
-        height: 100px;
-    }
-
     &:focus {
         outline: none;
     }
@@ -86,10 +82,7 @@
     display: block;
     margin: 0 auto;
 
-    @include mq(tablet) {
-        max-height: 100px;
-        max-width: 100px;
-    }
+
 }
 
 .uit-shop__item-shelf {
