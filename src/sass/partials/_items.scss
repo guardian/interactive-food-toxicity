@@ -20,16 +20,24 @@
     height: 2px;
 }
 
+@keyframes printReceipt {
+    from {
+        transform: translateY(calc(-100% + 32px));
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .uit-items__receipt {
     position: relative;
     padding: 12px 6px;
     margin: -2px 6px 0;
     background-color: $c-white;
     transform: translateY(calc(-100% + 32px));
-    transition: transform linear 1s;
 
     .is-activated & {
-        transform: none;
+        animation: printReceipt 1s linear 1 forwards;
     }
 
     &:after {
