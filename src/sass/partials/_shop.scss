@@ -85,8 +85,6 @@
     width: 100%;
     display: block;
     margin: 0 auto;
-
-
 }
 
 .uit-shop__item-shelf {
@@ -103,8 +101,8 @@
 
 .uit-shop__basket {
     position: relative;
-    margin: 12px 0;
-    min-height: 120px;
+    margin: 12px auto;
+    max-width: 340px;
     margin: 0 20px 12px;
     transition: transform 0.4s linear;
     transform-origin: bottom center;
@@ -122,8 +120,61 @@
     }
 }
 
+.uit-shop__basket-items {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .uit-shop__item {
+        width: 32%;
+        position: absolute;
+    }
+
+    .uit-shop__item--basket-0 {
+        left: 4%;
+        bottom: 7%;
+
+        .uit-shop__item-image {
+            transform: rotate(-10deg);
+        }
+    }
+
+    .uit-shop__item--basket-1 {
+        left: 35%;
+        bottom: -2%;
+
+        .uit-shop__item-image {
+            transform: rotate(-90deg);
+        }
+    }
+
+    .uit-shop__item--basket-2 {
+        right: 0%;
+        bottom: 16%;
+
+        .uit-shop__item-image {
+            transform: rotate(20deg);
+        }
+    }
+
+    .uit-shop__item--basket-3 {
+        left: 46%;
+        bottom: 43%;
+
+        .uit-shop__item-image {
+            transform: rotate(40deg);
+        }
+    }
+}
+
 .uit-shop__basket-image {
-    max-width: 60%;
+    width: 100%;
+    position: relative;
+    pointer-events: none;
+    z-index: 5;
+    padding-top: 10%;
 }
 
 .uit-shop__button {

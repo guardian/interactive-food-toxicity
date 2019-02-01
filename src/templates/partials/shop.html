@@ -2,9 +2,9 @@
     <div class='uit-container'>
         <div class='uit-content'>
             <div class='uit-subhead'>
-                Select <span class='uit-shop__basket-count'>5 items</span> that make up your weekly shop
+                Select <span class='uit-shop__basket-count'>4 items</span> that make up your weekly shop
             </div>
-            <div class='uit-shop__items'>
+            <div class='uit-shop__items uit-shop__items--shelf'>
                 {{#each items}}
                     <div class='uit-shop__item-wrapper' title='{{ food }}'>
                         <div class='uit-shop__item' data-item='{{ handlise food }}'>
@@ -19,12 +19,11 @@
 
             <div class='uit-shop__basket'>
                 <img class='uit-shop__basket-image' src='{{ path }}/assets/cart.png' />
-                <div class='uit-shop__items'>
+                <div class='uit-shop__basket-items'>
                     <div class='uit-shop__item uit-shop__item--basket-0'></div>
                     <div class='uit-shop__item uit-shop__item--basket-1'></div>
                     <div class='uit-shop__item uit-shop__item--basket-2'></div>
                     <div class='uit-shop__item uit-shop__item--basket-3'></div>
-                    <div class='uit-shop__item uit-shop__item--basket-4'></div>
                 </div>
             </div>
             <div class='uit-shop__button uit-button'>

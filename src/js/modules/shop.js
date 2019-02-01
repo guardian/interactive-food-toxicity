@@ -1,6 +1,6 @@
 import draggable from '@shopify/draggable';
 
-const basketLimit = 3;
+const basketLimit = 4;
 
 let isOverBasket = false,
     basket = [],
@@ -64,7 +64,7 @@ export default {
         $item.addClass('is-in-basket');
         basket.push($item.data('item'));
 
-        $('.uit-shop__item-delete').on('click', (e) => {
+        $('.uit-shop__item-delete').one('click', (e) => {
             this.removeFromBasket($(e.currentTarget).parent());
         });
 
