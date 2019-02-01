@@ -40,6 +40,10 @@
 
     &.draggable-source--is-dragging {
         opacity: 0.5;
+    }
+
+    &.draggable-source--is-dragging,
+    .uit-shop__basket & {
         transform: none;
         transition: none;
 
