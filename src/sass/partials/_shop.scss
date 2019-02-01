@@ -1,25 +1,20 @@
 .uit-shop__items {
     position: relative;
-    padding: 12px 0;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 20px;
+    grid-row-gap: 10px;
     grid-template-rows: auto;
 
-    @include mq(tablet) {
+    @include mq(mobileLandscape) {
         grid-template-columns: repeat(5, 1fr);
-        grid-row-gap: 12px;
+        grid-row-gap: 10px;
+
     }
 
     &:focus {
         outline: none;
     }
-}
-
-.uit-shop__items--shelf {
-    margin-bottom: 32px;
-    padding-top: 40px;
 }
 
 .uit-shop__item {
@@ -28,7 +23,7 @@
     transition: opacity 0.3s linear, transform 0.3s linear;
     transform: scale(.9);
     transform-origin: bottom;
-    height: 80px;
+    width: 100%;
 
     @include mq(tablet) {
         height: 100px;
@@ -87,10 +82,9 @@
 }
 
 .uit-shop__item-image {
-    max-width: 80px;
+    width: 100%;
     display: block;
     margin: 0 auto;
-    max-height: 80px;
 
     @include mq(tablet) {
         max-height: 100px;
@@ -104,7 +98,10 @@
     background-color: $c-black;
     height: 2px;
     margin-top: -2px;
-    margin-bottom: 10px;
+
+    @include mq(tablet) {
+        margin-bottom: 10px;
+    }
 }
 
 .uit-shop__basket {
