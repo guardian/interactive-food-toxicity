@@ -10,10 +10,40 @@
     }
 }
 
+.uit-items__receipt-wrapper {
+    overflow: hidden;
+    border-top: 2px solid $c-black;
+}
+
+.uit-items__receipt-hole {
+    background-color: $c-black;
+    height: 2px;
+}
+
 .uit-items__receipt {
+    position: relative;
     padding: 12px 6px;
-    background-color: $c-off-white;
-    border: 1px solid $c-light-grey;
+    margin: -2px 6px 0;
+    background-color: $c-white;
+    transform: translateY(calc(-100% + 32px));
+    transition: transform linear 1s;
+
+    .is-activated & {
+        transform: none;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 32px;
+        background: linear-gradient(-45deg, $c-light-green 16px, transparent 0), linear-gradient(45deg, $c-light-green 16px, transparent 0);
+        background-position: center bottom;
+        background-repeat: repeat-x;
+        background-size: 32px 32px;
+    }
 
     .uit-items__item-name {
         color: $c-red;
@@ -22,14 +52,20 @@
 
 .uit-items__item {
     display: flex;
-    padding-top: 12px;
-    margin-top: 12px;
-    border-top: 1px solid $c-light-grey;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid $c-light-grey;
+
+    &:last-of-type {
+        padding-bottom: 32px;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
 }
 
 .uit-items__item-image {
     width: 100px;
-    margin-right: 20px;
+    margin-right: 10px;
     flex-shrink: 0;
     display: block;
     align-self: flex-start;
