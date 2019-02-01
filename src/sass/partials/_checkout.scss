@@ -11,9 +11,16 @@ $count: 20;
         margin-left: -20px;
     }
 
+    @include mq(desktop) {
+        width: calc(100% + 340px);
+    }
+
     @include mq(leftCol) {
-        width: calc(100% - 9px);
         margin-left: -9px;
+    }
+
+    @include mq(wide) {
+        width: calc(100% + 400px);
     }
 }
 

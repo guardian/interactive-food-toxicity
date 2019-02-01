@@ -1,8 +1,10 @@
 .uit-share {
     margin: 0;
     padding: 0;
+    padding-left: 10px;
     list-style: none;
     overflow: hidden;
+    flex-shrink: 0;
 
     .ios &,
     .android & {
@@ -17,7 +19,7 @@
     border-radius: 20px;
     float: left;
     margin-right: 4px;
-    border: 1px solid $c-red;
+    border: 1px solid rgba($c-black, .2);
 
     .uit-icon {
         fill: $c-red;
@@ -28,6 +30,7 @@
 
     &:hover {
         background-color: $c-red;
+        border-color: $c-red;
 
         .uit-icon {
             fill: $c-white;

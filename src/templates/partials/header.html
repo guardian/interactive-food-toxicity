@@ -8,12 +8,19 @@
                 How toxic is your weekly grocery shop?
             </h1>
 
-            {{> partials/checkout }}
-
             <div class='uit-header__meta'>
-                <p class='uit-header__byline'><a href='https://www.theguardian.com/profile/caty-enders'>Caty Enders</a>, <a href='https://www.theguardian.com/profile/sam-morris'>Sam Morris</a> and <a href='https://www.theguardian.com/profile/juweek-adolphe'>Juweek Adolphe</a></p>
+                <div class='uit-header__meta-group'>
+                    <p class='uit-header__byline'>
+                        <a href='https://www.theguardian.com/profile/caty-enders'>Caty Enders</a>, <a href='https://www.theguardian.com/profile/sam-morris'>Sam Morris</a> and <a href='https://www.theguardian.com/profile/juweek-adolphe'>Juweek Adolphe</a>
+                    </p>
+                    <p class='uit-header__timestamp'>
+                        <time itemprop="dataPublished" datatime="2019-01-18T:08:00:00-0500">Fri 18 Jan 2019 08.00 EST</time>
+                    </p>
+                </div>
                 {{> partials/share }}
             </div>
+
+            {{> partials/checkout }}
         </div>
     </div>
 </div>
