@@ -119,7 +119,7 @@ export default {
 
         $('.uit-market__content').animate({
             scrollLeft: $('.uit-market__content').get(0).scrollWidth - $('.uit-market__content').width()
-        }, 6000, 'swing', function() {
+        }, 10000, 'swing', function() {
             $('.uit').addClass('is-final');
         }.bind(this))
     }

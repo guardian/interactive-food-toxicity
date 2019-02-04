@@ -42,8 +42,8 @@
     transform: translateY(calc(-100% + 32px));
 
     .is-checkedout & {
-        animation-delay: 4s;
         animation: printReceipt 1s linear 1 forwards;
+        animation-delay: 10s;
     }
 
     &:after {
