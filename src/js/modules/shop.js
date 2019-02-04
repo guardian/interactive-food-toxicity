@@ -75,8 +75,6 @@ export default {
             $('.uit-items').removeClass('is-activated');
         }
 
-        $('.uit-cart__mobile span').html('(' + basket.length + ')');
-
         this.updateLabel();
     },
 
@@ -93,8 +91,6 @@ export default {
             $('.uit-shop__button').removeClass('is-activated');
             $('.uit-items').removeClass('is-activated');
         }
-
-        $('.uit-cart__mobile span').html('(' + basket.length + ')');
 
         this.updateLabel();
     },

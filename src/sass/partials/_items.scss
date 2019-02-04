@@ -89,24 +89,3 @@
 .uit-items__item-description {
     margin: 0;
 }
-
-.uit-cart__mobile {
-    display: block;
-    position: fixed;
-    z-index: 99;
-    bottom: 0px;
-    opacity: 0;
-    width: 100%;
-    background-color: $c-white;
-    font-family: 'Guardian Egyptian Web';
-    font-size: 24px;
-    font-weight: 700;
-
-    @include mq(tablet) {
-        display: none;
-    }
-
-    &.is-visible {
-        opacity: 1;
-    }
-}
