@@ -111,10 +111,10 @@ export default {
         for (var i in basket) {
             const $item = $('.uit-items__item[data-item=' + basket[i] + ']');
 
-            console.log($item);
-
             $('.uit-items__receipt').append($item[0].outerHTML);
             $item.remove();
         }
+
+        $('.uit-items').addClass('is-checkedout');
     }
 };

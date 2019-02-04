@@ -1,7 +1,7 @@
 .uit-items {
     display: none;
 
-    &.is-activated {
+    &.is-checkedout {
         display: block;
     }
 
@@ -36,7 +36,7 @@
     background-color: $c-white;
     transform: translateY(calc(-100% + 32px));
 
-    .is-activated & {
+    .is-checkedout & {
         animation: printReceipt 1s linear 1 forwards;
     }
 
