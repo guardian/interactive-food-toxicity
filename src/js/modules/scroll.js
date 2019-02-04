@@ -5,6 +5,7 @@ let scrollTop, shopHeight, shopTop;
 module.exports =  {
     init: function() {
         this.bindings();
+        this.fixBasket();
     },
 
     bindings: function() {
@@ -37,6 +38,10 @@ module.exports =  {
         if (scrollTop + windowHeight > shopTop + shopHeight) {
             console.log('basket should be fixed')
             $('.uit-shop__checkout').addClass('is-fixed');
+        }
+
+        if (scrollTop + windowHeight > shopTop + shopHeight + 400 && $(window).width() < 959) {
+            $('.uit-shop__checkout').removeClass('is-visible');
         }
     }
 };

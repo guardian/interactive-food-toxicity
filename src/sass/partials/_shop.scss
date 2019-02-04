@@ -142,12 +142,11 @@
     }
 
     &.is-fixed {
-        position: absolute;
-        bottom: 12px;
-        left: auto;
-        right: 0;
-
         @include mq(desktop) {
+            position: absolute;
+            bottom: 12px;
+            left: auto;
+            right: 0;
             right: -320px;
         }
 
