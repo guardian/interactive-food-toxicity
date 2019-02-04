@@ -1,28 +1,24 @@
 <div class='uit-items'>
-    <div class='uit-container'>
-        <div class='uit-content'>
-            <h2 class='uit-items__receipt-title uit-subhead'>Your receipt</h2>
-            <div class='uit-items__receipt-wrapper'>
-                <div class='uit-items__receipt-hole'></div>
-                <div class='uit-items__receipt'></div>
-            </div>
+    <h2 class='uit-items__receipt-title uit-subhead'>Your receipt</h2>
+    <div class='uit-items__receipt-wrapper'>
+        <div class='uit-items__receipt-hole'></div>
+        <div class='uit-items__receipt'></div>
+    </div>
 
-            <div class='uit-items__other'>
-                <h2 class='uit-items__other-title uit-subhead'>
-                    <span class='uit-subhead__inner'>The rest</span>
-                </h2>
-                {{#each items}}
-                    <div class='uit-items__item' data-item='{{ handlise food }}'>
-                        <img class='uit-items__item-image' src='{{ ../path }}/assets/{{ handlise food }}.png' />
-                        <div class='uit-items__item-content'>
-                            <h3 class='uit-items__item-name'>{{ food }}</h3>
-                            <h4 class='uit-items__item-categories'>{{ categories }}</h4>
-                            <p class='uit-items__item-description'>{{ description }}</p>
-                            <p class='uit-items__item-alternative'><strong>Alternative</strong> {{ alternative }}</p>
-                        </div>
-                    </div>
-                {{/each}}
+    <div class='uit-items__other'>
+        <h2 class='uit-items__other-title uit-subhead'>
+            <span class='uit-subhead__inner'>The rest</span>
+        </h2>
+        {{#each items}}
+            <div class='uit-items__item' data-item='{{ handlise food }}'>
+                <img class='uit-items__item-image' src='{{ ../path }}/assets/{{ handlise food }}.png' />
+                <div class='uit-items__item-content'>
+                    <h3 class='uit-items__item-name'>{{ food }}</h3>
+                    <h4 class='uit-items__item-categories'>{{ categories }}</h4>
+                    <p class='uit-items__item-description'>{{ description }}</p>
+                    <p class='uit-items__item-alternative'><strong>Alternative</strong> {{ alternative }}</p>
+                </div>
             </div>
-        </div>
+        {{/each}}
     </div>
 </div>
