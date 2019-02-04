@@ -5,5 +5,18 @@
 }
 
 .uit-market__content {
-    display: flex;
+    @include mq(desktop) {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 1049px;
+        margin-left: -9px;
+        overflow: scroll;
+        overflow-y: hidden;
+        max-height: 600px;
+        padding-bottom: 20px;
+    }
+
+    @include mq(wide) {
+        width: 1049px;
+    }
 }

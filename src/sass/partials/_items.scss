@@ -1,8 +1,13 @@
 .uit-items {
-    display: none;
+    @include mq(desktop) {
+        width: 620px;
+        flex-shrink: 0;
+        padding-right: 320px;
+        padding-left: 10px;
+    }
 
-    &.is-checkedout {
-        display: block;
+    @include mq(wide) {
+        padding-right: 420px;
     }
 
     .uit-content {

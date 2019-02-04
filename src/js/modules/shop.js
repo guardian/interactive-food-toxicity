@@ -32,18 +32,18 @@ export default {
         });
 
         draggableItems.on('drag:move', (event) => {
-            isOverBasket = $(event.sensorEvent.target).parents('.uit-shop__basket').length > 0 || $(event.sensorEvent.target).hasClass('uit-shop__basket');
+            isOverBasket = $(event.sensorEvent.target).parents('.uit-checkout__basket').length > 0 || $(event.sensorEvent.target).hasClass('uit-checkout__basket');
 
             if (isOverBasket) {
-                $('.uit-shop__basket').addClass('is-above');
+                $('.uit-checkout__basket').addClass('is-above');
             } else {
-                $('.uit-shop__basket').removeClass('is-above');
+                $('.uit-checkout__basket').removeClass('is-above');
             }
         });
 
         draggableItems.on('drag:stop', (event) => {
             $source.removeClass('is-selected');
-            $('.uit-shop__basket').removeClass('is-above');
+            $('.uit-checkout__basket').removeClass('is-above');
 
             if (isOverBasket) {
                 this.addToBasket($source);
@@ -69,9 +69,9 @@ export default {
         });
 
         if (this.isBasketFull()) {
-            $('.uit-shop').addClass('is-checkoutable')
+            $('.uit').addClass('is-checkoutable')
         } else {
-            $('.uit-shop').removeClass('is-checkoutable');
+            $('.uit').removeClass('is-checkoutable');
         }
 
         this.updateLabel();
@@ -85,9 +85,9 @@ export default {
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
 
         if (this.isBasketFull()) {
-            $('.uit-shop').addClass('is-checkoutable')
+            $('.uit').addClass('is-checkoutable')
         } else {
-            $('.uit-shop').removeClass('is-checkoutable');
+            $('.uit').removeClass('is-checkoutable');
         }
 
         this.updateLabel();
@@ -96,11 +96,11 @@ export default {
     updateLabel() {
         const spacesLeftInBasket = basketLimit - basket.length;
         const text = spacesLeftInBasket === 1 ? '1 item' : spacesLeftInBasket + ' items';
-        $('.uit-shop__basket-count').text(text);
+        $('.uit-checkout__basket-count').text(text);
     },
 
     findEmptySlotInBasket() {
-        return $('.uit-shop__basket .uit-shop__item:empty:first');
+        return $('.uit-checkout__basket .uit-shop__item:empty:first');
     },
 
     isBasketFull() {

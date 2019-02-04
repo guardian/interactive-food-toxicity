@@ -12,15 +12,12 @@ $count: 20;
     }
 
     @include mq(desktop) {
-        width: calc(100% + 340px);
-    }
-
-    @include mq(leftCol) {
-        margin-left: -9px;
-    }
-
-    @include mq(wide) {
-        width: calc(100% + 400px);
+        flex-shrink: 0;
+        vertical-align: baseline;
+        padding-left: 10px;
+        align-self: flex-end;
+        margin-left: 0;
+        width: 840px;
     }
 }
 
@@ -28,6 +25,32 @@ $count: 20;
     position: relative;
     height: 0;
     padding-top: 60%;
+}
+
+.uit-checkout__basket {
+    position: absolute;
+    z-index: 7;
+    bottom: 48%;
+    left: 2%;
+    width: 34%;
+    display: grid;
+    grid: 100% / 1fr 1fr 1fr 1fr;
+
+    .uit-shop__item {
+        width: 150%;
+        margin-left: -25%;
+    }
+
+    .uit-shop__item-delete {
+        display: block;
+    }
+}
+
+.uit-checkout__button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
 }
 
 .uit-checkout__layer {
@@ -62,7 +85,10 @@ $count: 20;
     width: 6%;
     height: 3.5%;
     z-index: 4;
-    animation: scan $duration linear infinite;
+
+    .is-animating & {
+        animation: scan $duration linear infinite;
+    }
 }
 
 .uit-checkout__item {
@@ -73,10 +99,13 @@ $count: 20;
     z-index: 3;
     width: 16%;
     height: auto;
-    animation: buyItem $duration * $count linear infinite;
 
     img {
         opacity:0;
+    }
+
+    .is-animating & {
+        animation: buyItem $duration * $count linear infinite;
     }
 }
 
@@ -107,7 +136,11 @@ $count: $count / 3; // ensures that three items are visible at once
 
 .uit-checkout__face {
     z-index: 2;
-    animation: face ($duration * 6) linear infinite;
+    background-image: url('{{ path }}/assets/header/face--1.png');
+
+    .is-animating & {
+        animation: face ($duration * 6) linear infinite;
+    }
 }
 
 @keyframes face {
