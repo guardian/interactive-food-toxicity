@@ -68,11 +68,10 @@ export default {
             this.removeFromBasket($(e.currentTarget).parent());
         });
 
-        if (basket.length === basketLimit) {
-            $('.uit-shop__button').addClass('is-activated');
+        if (this.isBasketFull()) {
+            $('.uit-shop').addClass('is-checkoutable')
         } else {
-            $('.uit-shop__button').removeClass('is-activated');
-            $('.uit-items').removeClass('is-activated');
+            $('.uit-shop').removeClass('is-checkoutable');
         }
 
         this.updateLabel();
@@ -85,11 +84,10 @@ export default {
         $item.removeAttr('data-item');
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
 
-        if (basket.length > 0){
-            $('.uit-shop__button').addClass('is-activated');
+        if (this.isBasketFull()) {
+            $('.uit-shop').addClass('is-checkoutable')
         } else {
-            $('.uit-shop__button').removeClass('is-activated');
-            $('.uit-items').removeClass('is-activated');
+            $('.uit-shop').removeClass('is-checkoutable');
         }
 
         this.updateLabel();
@@ -105,9 +103,11 @@ export default {
         return $('.uit-shop__basket .uit-shop__item:empty:first');
     },
 
-    showResults() {
-        $('.uit-items').addClass('is-activated');
+    isBasketFull() {
+        return basket.length === basketLimit;
+    },
 
+    showResults() {
         for (var i in basket) {
             const $item = $('.uit-items__item[data-item=' + basket[i] + ']');
 

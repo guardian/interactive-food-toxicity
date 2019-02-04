@@ -15,6 +15,10 @@
     &:focus {
         outline: none;
     }
+
+    .is-checkoutable & {
+        pointer-events: none;
+    }
 }
 
 .uit-shop__item {
@@ -247,7 +251,7 @@
     pointer-events: none;
     align-self: baseline;
 
-    &.is-activated {
+    .is-checkoutable & {
         opacity: 1;
         pointer-events: auto;
     }
