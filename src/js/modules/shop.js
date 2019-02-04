@@ -54,7 +54,7 @@ export default {
             this.addToBasket($(e.currentTarget));
         });
 
-        $('.uit-shop__button').click((e) => {
+        $('.uit-checkout__button').click((e) => {
             this.showResults();
         });
     },
@@ -115,6 +115,12 @@ export default {
             $item.remove();
         }
 
-        $('.uit-items').addClass('is-checkedout');
+        $('.uit').addClass('is-checkedout');
+
+        $('.uit-market__content').animate({
+            scrollLeft: $('.uit-market__content').get(0).scrollWidth - $('.uit-market__content').width()
+        }, 6000, 'swing', function() {
+            $('.uit').addClass('is-final');
+        }.bind(this))
     }
 };

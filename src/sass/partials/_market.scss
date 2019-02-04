@@ -10,13 +10,17 @@
         flex-wrap: nowrap;
         width: 1049px;
         margin-left: -9px;
-        overflow: scroll;
-        overflow-y: hidden;
+        overflow: hidden;
         max-height: 600px;
         padding-bottom: 20px;
+        transition: max-height 1s linear;
     }
 
     @include mq(wide) {
         width: 1049px;
+    }
+
+    .is-final & {
+        max-height: 3000px;
     }
 }

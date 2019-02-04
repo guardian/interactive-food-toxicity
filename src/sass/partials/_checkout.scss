@@ -51,6 +51,14 @@ $count: 20;
     bottom: 0;
     left: 0;
     z-index: 20;
+    transition: opacity 0.8s;
+    opacity: 0.2;
+    pointer-events: none;
+
+    .is-checkoutable & {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 .uit-checkout__layer {
@@ -86,7 +94,7 @@ $count: 20;
     height: 3.5%;
     z-index: 4;
 
-    .is-animating & {
+    .is-checkedout & {
         animation: scan $duration linear infinite;
     }
 }
@@ -104,7 +112,7 @@ $count: 20;
         opacity:0;
     }
 
-    .is-animating & {
+    .is-checkedout & {
         animation: buyItem $duration * $count linear infinite;
     }
 }
@@ -138,7 +146,7 @@ $count: $count / 3; // ensures that three items are visible at once
     z-index: 2;
     background-image: url('{{ path }}/assets/header/face--1.png');
 
-    .is-animating & {
+    .is-checkedout & {
         animation: face ($duration * 6) linear infinite;
     }
 }
