@@ -1,4 +1,6 @@
-var windowTop, windowHeight, windowBottom;
+let windowTop, windowHeight, windowBottom;
+
+let scrollTop, shopHeight, shopTop;
 
 module.exports =  {
     init: function() {
@@ -7,64 +9,34 @@ module.exports =  {
 
     bindings: function() {
         $(window).scroll(function() {
-            this.fixMap();
+            this.fixBasket();
         }.bind(this));
 
         $(window).resize(function() {
-            this.fixMap();
+            this.fixBasket();
         }.bind(this));
-
     },
 
     percentageOfHeight: function(percentage) {
         return (windowHeight / 100) * percentage;
     },
 
-    showMenu: function() {
-        $('html').addClass('nav-is-expanded');
-        $('.uit-dropdown__button').unbind();
-        $('.uit-dropdown__button').click(function(e) {
-            e.preventDefault();
-            this.hideMenu();
-        }.bind(this));
-    },
+    fixBasket: function() {
+        scrollTop = $(window).scrollTop();
+        windowHeight = $(window).height();
+        shopHeight = $('.uit-shop').height();
+        shopTop = $('.uit-shop').offset().top;
 
-    fixMap: function() {
-        windowTop = $(window).scrollTop();
-        windowHeight = $('.uit-shop').height();
-        windowBottom = $('.uit-shop').offset().top + windowHeight;
+        $('.uit-shop__checkout').removeClass('is-visible is-fixed');
 
-        if (windowTop > $('.uit-shop').offset().top - this.percentageOfHeight(50)) {
-            $('.uit-cart__mobile').addClass('is-visible');
-        } else {
-            $('.uit-cart__mobile').removeClass('is-visible');
+        if (scrollTop + windowHeight > shopTop) {
+            console.log('basket should be visible');
+            $('.uit-shop__checkout').addClass('is-visible');
         }
 
-        if (windowTop > windowBottom - this.percentageOfHeight(80) ||
-        windowTop < $('.uit-shop').offset().top - this.percentageOfHeight(50) ) {
-            $('.uit-cart__mobile').removeClass('is-visible');
-        } else {
-            $('.uit-cart__mobile').addClass('is-visible');
+        if (scrollTop + windowHeight > shopTop + shopHeight) {
+            console.log('basket should be fixed')
+            $('.uit-shop__checkout').addClass('is-fixed');
         }
-    },
-
-    hideMenu: function() {
-        $('html').removeClass('nav-is-expanded');
-        $('.uit-dropdown__button').unbind();
-        $('.uit-dropdown__button').click(function(e) {
-            e.preventDefault();
-            this.showMenu();
-        }.bind(this));
-    },
-
-    changeNav: function(step) {
-        $('.uit-nav__category').each(function(i, el) {
-            $(el).removeClass('uit-highlighted');
-            if ($(el).hasClass('uit-nav__category--' + step)) {
-                $(el).addClass('uit-highlighted');
-                $('.uit-mobile-nav__category-title').html(sections[step]);
-                $('.uit-nav__category-title').removeClass('uit-nav__hidden');
-            }
-        }.bind(this));
     }
 };
