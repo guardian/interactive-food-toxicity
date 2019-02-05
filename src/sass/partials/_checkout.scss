@@ -34,9 +34,25 @@ $count: 20;
     left: 2%;
     width: 34%;
     display: grid;
-    grid: 100% / 1fr 1fr 1fr 1fr;
+    grid: 1fr / 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
 
     .uit-shop__item {
+        height: 0;
+        padding-bottom: 150%;
+
+        &:empty:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            border: 2px dashed $c-black;
+        }
+    }
+
+    .uit-shop__item-image {
         width: 150%;
         margin-left: -25%;
     }
