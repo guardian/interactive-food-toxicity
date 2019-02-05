@@ -43,7 +43,7 @@
 
     .is-checkedout & {
         animation: printReceipt 1s linear 1 forwards;
-        animation-delay: 10s;
+        animation-delay: 5s;
     }
 
     &:after {
