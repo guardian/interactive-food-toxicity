@@ -1,4 +1,4 @@
-$duration: 1s;
+$duration: 3s;
 $count: 20;
 
 .uit-checkout-wrapper {
@@ -27,6 +27,22 @@ $count: 20;
     padding-top: 60%;
 }
 
+@mixin buyItemAnimation($i, $starting) {
+    @keyframes buyItem-#{$i} {
+        0% {
+            left: $starting;
+        }
+        70%, 73% {
+            left: 80%;
+            bottom: 48.3%;
+        }
+        100% {
+            left: 80%;
+            bottom: 10%;
+        }
+    }
+}
+
 .uit-checkout__item {
     position: absolute;
     z-index: 15;
@@ -34,6 +50,12 @@ $count: 20;
     bottom: 48.3%;
     width: 9%;
     height: 21%;
+
+    .is-checkedout & {
+        animation-duration: $duration;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
 
     .uit-shop__item {
         min-height: 100%;
@@ -61,20 +83,35 @@ $count: 20;
     }
 }
 
+@include buyItemAnimation(0, 0%);
+
 .uit-checkout__item--0 {
     left: 0;
+    animation-name: buyItem-0;
+    animation-delay: $duration / 11s * 3 + 0s;
 }
+
+@include buyItemAnimation(1, 9.5%);
 
 .uit-checkout__item--1 {
     left: 9.5%;
+    animation-name: buyItem-1;
+    animation-delay: $duration / 11s * 2 + 0s;
 }
+
+@include buyItemAnimation(2, 19%);
 
 .uit-checkout__item--2 {
     left: 19%;
+    animation-name: buyItem-2;
+    animation-delay: $duration / 11s + 0s;
 }
+
+@include buyItemAnimation(3, 28.5%);
 
 .uit-checkout__item--3 {
     left: 28.5%;
+    animation-name: buyItem-3;
 }
 
 .uit-checkout__button {
@@ -103,7 +140,8 @@ $count: 20;
 }
 
 .uit-checkout__top {
-    z-index: 5;
+    z-index: 20;
+    pointer-events: none;
     background-image: url('{{ path }}/assets/header/top.png');
 }
 
