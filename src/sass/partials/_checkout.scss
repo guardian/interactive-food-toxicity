@@ -14,10 +14,10 @@ $count: 20;
     @include mq(desktop) {
         flex-shrink: 0;
         vertical-align: baseline;
-        padding-left: 10px;
+        padding-left: 20px;
         align-self: flex-end;
         margin-left: 0;
-        width: 840px;
+        width: 800px;
     }
 }
 
@@ -27,39 +27,54 @@ $count: 20;
     padding-top: 60%;
 }
 
-.uit-checkout__basket {
+.uit-checkout__item {
     position: absolute;
-    z-index: 7;
-    bottom: 48%;
-    left: 2%;
-    width: 34%;
-    display: grid;
-    grid: 1fr / 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    z-index: 15;
+    left: 0;
+    bottom: 48.3%;
+    width: 9%;
+    height: 21%;
 
     .uit-shop__item {
-        height: 0;
-        padding-bottom: 150%;
-
-        &:empty:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 4px;
-            border: 2px dashed $c-black;
-        }
+        min-height: 100%;
     }
 
-    .uit-shop__item-image {
-        width: 150%;
-        margin-left: -25%;
+    .uit-shop__item:empty:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 6px;
+        pointer-events: none;
+        border: 2px dashed $c-black;
     }
 
     .uit-shop__item-delete {
         display: block;
     }
+
+    .uit-shop__item-image {
+        width: 142%;
+        margin-left: -21%;
+        pointer-events: none;
+    }
+}
+
+.uit-checkout__item--0 {
+    left: 0;
+}
+
+.uit-checkout__item--1 {
+    left: 9.5%;
+}
+
+.uit-checkout__item--2 {
+    left: 19%;
+}
+
+.uit-checkout__item--3 {
+    left: 28.5%;
 }
 
 .uit-checkout__button {
@@ -112,49 +127,6 @@ $count: 20;
 
     .is-checkedout & {
         animation: scan $duration linear infinite;
-    }
-}
-
-.uit-checkout__item {
-    position: absolute;
-    top: 25.5%;
-    left: 0;
-    transform: translateX(-100%);
-    z-index: 3;
-    width: 16%;
-    height: auto;
-
-    img {
-        opacity:0;
-    }
-
-    .is-checkedout & {
-        animation: buyItem $duration * $count linear infinite;
-    }
-}
-
-@for $i from 0 through $count {
-    .uit-checkout__item--#{$i} {
-        animation-delay: -($duration) * $i;
-    }
-}
-
-$count: $count / 3; // ensures that three items are visible at once
-
-@keyframes buyItem {
-    0% {
-        left: 0px;
-    }
-    #{(100 / $count) * 0.7%}, #{(100 / $count) * 0.73%} {
-        left: 92%;
-        top: 25.5%;
-    }
-    #{(100 / $count) * 1%} {
-        left: 92.5%;
-        top: 70%;
-    }
-    #{(100 / $count) * 1.0001%} {
-        left: 0px;
     }
 }
 
