@@ -56,7 +56,7 @@ $count: 20;
     grid-gap: 10px;
     z-index: 17;
 
-    .is-checkedout & {
+    .is-checkedout .uit-market & {
         animation: beltSlide $duration linear;
     }
 
@@ -96,7 +96,7 @@ $count: 20;
     position: relative;
     min-height: 100%;
 
-    .is-checkedout & {
+    .is-checkedout .uit-market & {
         animation: bagging $duration linear;
         animation-fill-mode: forwards;
     }
