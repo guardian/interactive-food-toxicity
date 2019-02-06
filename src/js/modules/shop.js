@@ -60,7 +60,9 @@ export default {
     },
 
     addToBasket($item) {
-        $(this.findEmptySlotInBasket()).html($item.html()).data('item', $item.data('item'));
+        console.log(this.findEmptySlotInBasket());
+        console.log($item[0].outerHTML);
+        $(this.findEmptySlotInBasket()).html($item[0].outerHTML);
         $item.addClass('is-in-basket');
         basket.push($item.data('item'));
 
@@ -78,10 +80,10 @@ export default {
     },
 
     removeFromBasket($item) {
+
         const itemName = $item.data('item');
         basket = basket.filter(item => item !== itemName);
-        $item.empty();
-        $item.removeAttr('data-item');
+        $('.uit-checkout__basket .uit-shop__item[data-item=' + itemName + ']').parent().empty();
         $('.uit-shop__item[data-item=' + itemName + ']').removeClass('is-in-basket');
 
         if (this.isBasketFull()) {
@@ -100,7 +102,7 @@ export default {
     },
 
     findEmptySlotInBasket() {
-        return $('.uit-checkout__basket .uit-shop__item:empty:first');
+        return $('.uit-checkout__basket').find('.uit-checkout__basket-item:empty:first');
     },
 
     isBasketFull() {

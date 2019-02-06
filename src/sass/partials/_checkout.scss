@@ -54,13 +54,10 @@ $count: 20;
     display: grid;
     grid: 100% / 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
+    z-index: 17;
 
     .is-checkedout & {
         animation: beltSlide $duration linear;
-    }
-
-    .uit-shop__item {
-        min-height: 100%;
     }
 
     .uit-shop__item-delete {
@@ -96,6 +93,7 @@ $count: 20;
 }
 
 .uit-checkout__basket-item {
+    position: relative;
     min-height: 100%;
 
     .is-checkedout & {
