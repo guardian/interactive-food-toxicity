@@ -122,7 +122,17 @@ export default {
             scrollLeft: $('.uit-market__content').get(0).scrollWidth - $('.uit-market__content').width()
         }, 6000, $.bez([0.3, 0.7, 0.7, 0.3]), function() {
             $('.uit').addClass('is-final');
+            $(window).resize(function() {
+                this.repositionMarket();
+            }.bind(this));
         }.bind(this))
+    },
+
+    repositionMarket() {
+        console.log('start to re-position');
+        console.log($('.uit-market__content').width());
+        console.log($('.uit-market__content').get(0).scrollWidth);
+        $('.uit-market__content').scrollLeft($('.uit-market__content').get(0).scrollWidth);
     },
 
     extendJqueryEasing() {

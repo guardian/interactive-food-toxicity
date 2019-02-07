@@ -13,15 +13,15 @@
 
     @include mq(tablet) {
         width: 620px;
-        padding-right: 170px;
+        padding-right: 97px;
     }
 
     @include mq(desktop) {
         width: 620px;
-        padding-right: 320px;
+        padding-right: 340px;
     }
 
-    @include mq(desktop) {
+    @include mq(wide) {
         padding-right: 420px;
     }
 

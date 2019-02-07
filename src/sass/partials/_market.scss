@@ -21,6 +21,7 @@
 
     @include mq(tablet) {
         max-height: 600px;
+        width: 738px;
     }
 
     @include mq(desktop) {
