@@ -88,9 +88,14 @@ $count: 20;
     z-index: 40;
     padding: 8px 10px;
     box-sizing: border-box;
+    transition: transform 0.4s linear;
 
     @include mq(mobileLandscape) {
         padding: 8px 20px;
+    }
+
+    .is-checkedout & {
+        transform: translateY(100%);
     }
 
     .uit-content {
