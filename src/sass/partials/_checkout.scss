@@ -162,6 +162,11 @@ $duration: 5s;
         bottom: 6px;
         pointer-events: none;
         border: 2px dashed $c-black;
+        transition: transform 0.4s linear;
+    }
+
+    .draggable--is-dragging &:empty:hover:before {
+        transform: scale(1.1);
     }
 }
 

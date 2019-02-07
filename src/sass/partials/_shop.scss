@@ -53,7 +53,9 @@
     }
 
     &:hover {
-        transform: none;
+        @include mq(desktop) {
+            transform: none;
+        }
     }
 
     .draggable-container--is-dragging &:hover {

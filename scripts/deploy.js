@@ -27,7 +27,7 @@ module.exports = function deploy(buildVersion) {
     var config = require( './config.json' );
 
     var BASE_DIR = path.resolve( '.deploy' );
-    var MAX_CONCURRENT_UPLOADS = 8;
+    var MAX_CONCURRENT_UPLOADS = 1;
 
     try {
         var CREDENTIALS = new AWS.SharedIniFileCredentials({profile: 'interactives'});
