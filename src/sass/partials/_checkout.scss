@@ -1,23 +1,24 @@
 $duration: 5s;
-$count: 20;
 
 .uit-checkout-wrapper {
-    width: calc(100% + 10px);
-    margin-left: -10px;
     overflow: hidden;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 620px;
+    vertical-align: baseline;
+    padding-left: 20px;
+    align-self: flex-end;
 
-    @include mq(mobileLandscape) {
-        width: calc(100% + 20px);
-        margin-left: -20px;
+    @include mq(tablet) {
+        padding-left: 100px;
+        padding-right: 10px;
     }
 
     @include mq(desktop) {
-        flex-shrink: 0;
-        vertical-align: baseline;
-        padding-left: 20px;
-        align-self: flex-end;
-        margin-left: 0;
         width: 800px;
+        max-width: none;
+        padding-left: 20px;
+        padding-right: 0;
     }
 }
 
@@ -94,6 +95,10 @@ $count: 20;
         padding: 8px 20px;
     }
 
+    @include mq(desktop) {
+        display: none;
+    }
+
     .is-checkedout & {
         transform: translateY(100%);
     }
@@ -108,7 +113,7 @@ $count: 20;
 
     .uit-checkout__button {
         bottom: auto;
-        top: -1px;
+        top: 0;
         left: auto;
         right: 0;
     }
@@ -181,6 +186,10 @@ $count: 20;
     .is-checkoutable & {
         opacity: 1;
         pointer-events: auto;
+    }
+
+    .is-checkedout & {
+        opacity: 0;
     }
 }
 

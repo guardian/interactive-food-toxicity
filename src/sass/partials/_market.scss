@@ -5,15 +5,27 @@
 }
 
 .uit-market__content {
-    @include mq(desktop) {
-        display: flex;
-        flex-wrap: nowrap;
-        width: 1049px;
-        margin-left: -9px;
-        overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+    margin-left: -10px;
+    max-height: 150vw;
+    padding-bottom: 20px;
+    transition: max-height 1s linear;
+    overflow: hidden;
+
+    @include mq(mobileLandscape) {
+        margin-left: -20px;
+        max-height: 93vw;
+    }
+
+    @include mq(tablet) {
         max-height: 600px;
-        padding-bottom: 20px;
-        transition: max-height 1s linear;
+    }
+
+    @include mq(desktop) {
+        margin-left: -9px;
+        width: 967px;
     }
 
     @include mq(wide) {

@@ -1,8 +1,20 @@
 .uit-shop {
+    width: calc(100% - 20px);
+    padding-left: 10px;
+    flex-shrink: 0;
+
+    @include mq(mobileLandscape) {
+        width: calc(100% - 40px);
+        padding-left: 20px;
+    }
+
+    @include mq(tablet) {
+        width: 620px;
+    }
+
     @include mq(desktop) {
         padding-left: 10px;
         width: 620px;
-        flex-shrink: 0;
     }
 }
 
