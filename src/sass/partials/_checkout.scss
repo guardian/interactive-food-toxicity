@@ -90,6 +90,7 @@ $duration: 5s;
     padding: 8px 10px;
     box-sizing: border-box;
     transition: transform 0.4s linear;
+    transform: translateY(100%);
 
     @include mq(mobileLandscape) {
         padding: 8px 20px;
@@ -97,6 +98,10 @@ $duration: 5s;
 
     @include mq(desktop) {
         display: none;
+    }
+
+    &.is-visible {
+        transform: translateY(0);
     }
 
     .is-checkedout & {
