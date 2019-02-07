@@ -135,12 +135,12 @@ $duration: 5s;
         transform: translateY(0px);
     }
     55%, 100% {
-        transform: translateY(160px);
+        transform: translateY(120%);
     }
-    56% {
+    54.9% {
         opacity: 1;
     }
-    57%, 100% {
+    55%, 100% {
         opacity: 0;
     }
 }
