@@ -61,8 +61,8 @@ export default {
         const itemName = $item.data('item');
 
         $(this.findEmptySlotInBasket()).html($item[0].outerHTML);
-        $item.addClass('is-in-basket');
-        basket.push($item.data('item'));
+        $('.uit-shop .uit-shop__item[data-item=' + itemName + ']').addClass('is-in-basket');
+        basket.push(itemName);
 
         $('.uit-shop__item-delete').one('click', (e) => {
             this.removeFromBasket($(e.currentTarget).parent());

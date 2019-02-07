@@ -4,5 +4,13 @@ console.log('app loaded');
 import shop from './modules/shop.js';
 import scroll from './modules/scroll.js';
 
-shop.init();
-scroll.init();
+function defer() {
+    if (window.$) {
+        shop.init();
+        scroll.init();
+    } else {
+        setTimeout(function() { defer() }, 50);
+    }
+}
+
+defer();
