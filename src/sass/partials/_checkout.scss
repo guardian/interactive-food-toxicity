@@ -46,15 +46,18 @@ $count: 20;
 }
 
 .uit-checkout__basket {
-    position: absolute;
-    bottom: 49.8%;
-    left: 0;
-    width: 38%;
-    min-height: 19%;
     display: grid;
     grid: 100% / 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     z-index: 17;
+
+    .uit-market & {
+        position: absolute;
+        bottom: 49.8%;
+        left: 0;
+        width: 38%;
+        min-height: 19%;
+    }
 
     .is-checkedout .uit-market & {
         animation: beltSlide $duration linear;
@@ -74,6 +77,17 @@ $count: 20;
         left: -23%;
         width: 146%;
         pointer-events: none;
+    }
+}
+
+.uit-basket-wrapper {
+    position: fixed;
+    background-color: $c-white;
+
+    .uit-checkout__basket {
+        height: 300px;
+        width: 500px;
+        margin: 0 auto;
     }
 }
 

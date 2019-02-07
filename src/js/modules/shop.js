@@ -4,7 +4,6 @@ const basketLimit = 4;
 
 let isOverBasket = false,
     basket = [],
-    $source,
     draggableItems;
 
 export default {
@@ -27,8 +26,7 @@ export default {
 
     bindings() {
         draggableItems.on('drag:start', (event) => {
-            $source = $(event.data.originalSource);
-            $source.addClass('is-selected');
+            $(event.data.originalSource).addClass('is-selected');
         });
 
         draggableItems.on('drag:move', (event) => {
@@ -42,11 +40,11 @@ export default {
         });
 
         draggableItems.on('drag:stop', (event) => {
-            $source.removeClass('is-selected');
+            $(event.data.originalSource).removeClass('is-selected');
             $('.uit-checkout__basket').removeClass('is-above');
 
             if (isOverBasket) {
-                this.addToBasket($source);
+                this.addToBasket($(event.data.source).removeClass('draggable-source--is-dragging'));
             }
         });
 
@@ -60,8 +58,8 @@ export default {
     },
 
     addToBasket($item) {
-        console.log(this.findEmptySlotInBasket());
-        console.log($item[0].outerHTML);
+        const itemName = $item.data('item');
+
         $(this.findEmptySlotInBasket()).html($item[0].outerHTML);
         $item.addClass('is-in-basket');
         basket.push($item.data('item'));
@@ -80,7 +78,6 @@ export default {
     },
 
     removeFromBasket($item) {
-
         const itemName = $item.data('item');
         basket = basket.filter(item => item !== itemName);
         $('.uit-checkout__basket .uit-shop__item[data-item=' + itemName + ']').parent().empty();
