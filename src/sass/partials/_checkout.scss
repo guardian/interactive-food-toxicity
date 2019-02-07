@@ -49,15 +49,15 @@ $duration: 5s;
 .uit-checkout__basket {
     display: grid;
     grid: 100% / 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 2%;
     z-index: 17;
 
     .uit-market & {
         position: absolute;
-        bottom: 49.8%;
+        bottom: 48.2%;
         left: 0;
         width: 38%;
-        min-height: 19%;
+        min-height: 21.7%;
     }
 
     .is-checkedout .uit-market & {
@@ -73,8 +73,6 @@ $duration: 5s;
     }
 
     .uit-market & .uit-shop__item-image {
-        position: absolute;
-        top: 0;
         left: -23%;
         width: 146%;
         pointer-events: none;
