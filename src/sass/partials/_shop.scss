@@ -1,3 +1,23 @@
+.uit-shop {
+    width: calc(100% - 20px);
+    padding-left: 10px;
+    flex-shrink: 0;
+
+    @include mq(mobileLandscape) {
+        width: calc(100% - 40px);
+        padding-left: 20px;
+    }
+
+    @include mq(tablet) {
+        width: 620px;
+    }
+
+    @include mq(desktop) {
+        padding-left: 10px;
+        width: 620px;
+    }
+}
+
 .uit-shop__items {
     position: relative;
     width: 100%;
@@ -9,7 +29,6 @@
     @include mq(mobileLandscape) {
         grid-template-columns: repeat(5, 1fr);
         grid-row-gap: 10px;
-
     }
 
     &:focus {
@@ -23,10 +42,10 @@
 
 .uit-shop__item {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     transition: opacity 0.3s linear, transform 0.3s linear;
     transform: scale(.9);
-    transform-origin: bottom;
+    margin-bottom: -8px;
     width: 100%;
 
     &:focus {
@@ -47,7 +66,7 @@
     }
 
     &.draggable-source--is-dragging,
-    .uit-shop__basket & {
+    .uit-checkout__basket & {
         transform: none;
         transition: none;
 
@@ -70,7 +89,7 @@
 
 .uit-shop__item-delete {
     position: absolute;
-    z-index: 3;
+    z-index: 15;
     top: -8px;
     right: -8px;
     width: 32px;
@@ -79,14 +98,26 @@
     border-radius: 16px;
     background-color: $c-white;
     display: none;
+    transition: background 0.2s linear;
 
     svg {
         width: 100%;
         fill: $c-red;
+        transition: fill 0.2s linear;
+    }
+
+    &:hover {
+        background-color: $c-red;
+
+        svg {
+            fill: $c-white;
+        }
     }
 }
 
 .uit-shop__item-image {
+    position: relative;
+    z-index: 10;
     width: 100%;
     display: block;
     margin: 0 auto;
@@ -94,7 +125,7 @@
 
 .uit-shop__item-shelf {
     position: relative;
-    z-index: 10;
+    z-index: 8;
     background-color: $c-black;
     height: 2px;
     margin-top: -2px;
@@ -157,102 +188,5 @@
         @include mq(wide) {
             right: -400px;
         }
-    }
-}
-
-.uit-shop__basket {
-    position: relative;
-    transition: transform 0.4s linear;
-    transform-origin: bottom center;
-    width: 220px;
-
-    @include mq(wide) {
-        width: 280px;
-    }
-
-    &.is-above {
-        transform: scale(1.1);
-    }
-
-    .uit-shop__item-delete {
-        display: block;
-    }
-
-    .uit-shop__item-name {
-        opacity: 0;
-    }
-}
-
-.uit-shop__basket-items {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    .uit-shop__item {
-        width: 32%;
-        position: absolute;
-    }
-
-    .uit-shop__item--basket-0 {
-        left: 4%;
-        bottom: 7%;
-
-        .uit-shop__item-image {
-            transform: rotate(-10deg);
-        }
-    }
-
-    .uit-shop__item--basket-1 {
-        left: 35%;
-        bottom: -2%;
-
-        .uit-shop__item-image {
-            transform: rotate(-90deg);
-        }
-    }
-
-    .uit-shop__item--basket-2 {
-        right: 0%;
-        bottom: 16%;
-
-        .uit-shop__item-image {
-            transform: rotate(20deg);
-        }
-    }
-
-    .uit-shop__item--basket-3 {
-        left: 46%;
-        bottom: 43%;
-
-        .uit-shop__item-image {
-            transform: rotate(40deg);
-        }
-    }
-}
-
-.uit-shop__basket-image {
-    width: 100%;
-    position: relative;
-    pointer-events: none;
-    z-index: 5;
-    padding-top: 10%;
-}
-
-.uit-shop__button {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: opacity 1s;
-    padding-right: 15px;
-    display: inline-block;
-    pointer-events: none;
-    align-self: baseline;
-
-    .is-checkoutable & {
-        opacity: 1;
-        pointer-events: auto;
     }
 }

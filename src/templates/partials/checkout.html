@@ -1,14 +1,12 @@
 <div class='uit-checkout-wrapper'>
     <div class='uit-checkout'>
+        {{> partials/basket }}
+
+        <div class='uit-checkout__button uit-button'>Checkout {{> icons/forward }}</div>
+
         <div class='uit-checkout__layer uit-checkout__top'></div>
 
         <div class='uit-checkout__scan'></div>
-
-        <div class='uit-checkout__items'>
-            {{#each items}}
-                <img class='uit-checkout__item uit-checkout__item--{{ @index }}' src='{{ ../ path }}/assets/{{ handlise food }}.png'  />
-            {{/each}}
-        </div>
 
         <div class='uit-checkout__layer uit-checkout__face'></div>
         <div class='uit-checkout__layer uit-checkout__base'></div>

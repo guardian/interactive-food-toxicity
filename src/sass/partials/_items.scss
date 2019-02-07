@@ -1,8 +1,28 @@
 .uit-items {
-    display: none;
+    width: calc(100% - 20px);
+    padding-left: 10px;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding-right: 10px;
 
-    &.is-checkedout {
-        display: block;
+    @include mq(mobileLandscape) {
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include mq(tablet) {
+        width: 620px;
+        padding-right: 97px;
+    }
+
+    @include mq(desktop) {
+        width: 620px;
+        padding-right: 340px;
+    }
+
+    @include mq(wide) {
+        padding-right: 420px;
     }
 
     .uit-content {
@@ -13,6 +33,7 @@
 .uit-items__receipt-wrapper {
     overflow: hidden;
     border-top: 2px solid $c-black;
+    padding-bottom: 12px;
 }
 
 .uit-items__receipt-hole {
@@ -38,6 +59,7 @@
 
     .is-checkedout & {
         animation: printReceipt 1s linear 1 forwards;
+        animation-delay: 5s;
     }
 
     &:after {

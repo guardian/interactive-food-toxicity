@@ -1,6 +1,4 @@
-let windowTop, windowHeight, windowBottom;
-
-let scrollTop, shopHeight, shopTop;
+let windowHeight, scrollTop, shopHeight, shopTop;
 
 module.exports =  {
     init: function() {
@@ -25,23 +23,15 @@ module.exports =  {
     fixBasket: function() {
         scrollTop = $(window).scrollTop();
         windowHeight = $(window).height();
-        shopHeight = $('.uit-shop').height();
-        shopTop = $('.uit-shop').offset().top;
+        shopHeight = $('.uit-market').height();
+        shopTop = $('.uit-market').offset().top;
 
-        $('.uit-shop__checkout').removeClass('is-visible is-fixed');
-
-        if (scrollTop + windowHeight > shopTop) {
-            console.log('basket should be visible');
-            $('.uit-shop__checkout').addClass('is-visible');
-        }
-
-        if (scrollTop + windowHeight > shopTop + shopHeight) {
-            console.log('basket should be fixed')
-            $('.uit-shop__checkout').addClass('is-fixed');
-        }
-
-        if (scrollTop + windowHeight > shopTop + shopHeight + 400 && $(window).width() < 959) {
-            $('.uit-shop__checkout').removeClass('is-visible');
+        if (scrollTop + windowHeight > shopTop + shopHeight + 400) {
+            $('.uit-basket-wrapper').removeClass('is-visible');
+        } else if (scrollTop + windowHeight > shopTop) {
+            $('.uit-basket-wrapper').addClass('is-visible');
+        } else {
+            $('.uit-basket-wrapper').removeClass('is-visible');
         }
     }
 };

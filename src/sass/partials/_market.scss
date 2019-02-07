@@ -1,0 +1,39 @@
+.uit-market {
+    .uit-container {
+        overflow: hidden;
+    }
+}
+
+.uit-market__content {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+    margin-left: -10px;
+    max-height: 150vw;
+    padding-bottom: 20px;
+    transition: max-height 1s linear;
+    overflow: hidden;
+
+    @include mq(mobileLandscape) {
+        margin-left: -20px;
+        max-height: 93vw;
+    }
+
+    @include mq(tablet) {
+        max-height: 600px;
+        width: 738px;
+    }
+
+    @include mq(desktop) {
+        margin-left: -9px;
+        width: 967px;
+    }
+
+    @include mq(wide) {
+        width: 1049px;
+    }
+
+    .is-final & {
+        max-height: 3000px;
+    }
+}
