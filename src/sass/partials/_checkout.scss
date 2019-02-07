@@ -4,7 +4,7 @@ $duration: 5s;
     overflow: hidden;
     flex-shrink: 0;
     width: 100%;
-    max-width: 620px;
+    min-width: 500px;
     vertical-align: baseline;
     padding-left: 20px;
     align-self: flex-end;
@@ -12,6 +12,8 @@ $duration: 5s;
     @include mq(tablet) {
         padding-left: 100px;
         padding-right: 10px;
+        min-width: none;
+        width: 620px;
     }
 
     @include mq(desktop) {

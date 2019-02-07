@@ -14,7 +14,6 @@
     padding-bottom: 20px;
     transition: max-height 1s linear;
     overflow: hidden;
-    // overflow: scroll;
 
     @include mq(mobileLandscape) {
         margin-left: -20px;
