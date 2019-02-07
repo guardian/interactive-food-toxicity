@@ -71,7 +71,7 @@ $count: 20;
         }
     }
 
-    .uit-shop__item-image {
+    .uit-market & .uit-shop__item-image {
         position: absolute;
         top: 0;
         left: -23%;
@@ -83,11 +83,37 @@ $count: 20;
 .uit-basket-wrapper {
     position: fixed;
     background-color: $c-white;
+    width: 100%;
+    bottom: 0;
+    z-index: 40;
+    padding: 8px 10px;
+    box-sizing: border-box;
 
-    .uit-checkout__basket {
-        height: 300px;
-        width: 500px;
+    @include mq(mobileLandscape) {
+        padding: 8px 20px;
+    }
+
+    .uit-content {
         margin: 0 auto;
+    }
+
+    .uit-shop__item {
+        margin-bottom: 0;
+    }
+
+    .uit-checkout__button {
+        bottom: auto;
+        top: -1px;
+        left: auto;
+        right: 0;
+    }
+
+    .uit-subhead {
+        padding: 0 110px 20px 0;
+    }
+
+    .uit-checkout__basket-item:empty {
+        padding-bottom: 100%;
     }
 }
 
@@ -108,7 +134,6 @@ $count: 20;
 
 .uit-checkout__basket-item {
     position: relative;
-    min-height: 100%;
 
     .is-checkedout .uit-market & {
         animation: bagging $duration linear;

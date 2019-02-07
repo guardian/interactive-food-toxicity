@@ -3,7 +3,11 @@
     {{> partials/body }}
     {{> partials/market }}
     <div class='uit-basket-wrapper'>
-        {{> partials/basket }}
+        <div class='uit-content'>
+            <h3 class='uit-basket__label uit-subhead'>Select <span class="uit-shop__basket-count">4 items</span></h3>
+            <div class='uit-checkout__button uit-button'>Checkout {{> icons/forward }}</div>
+            {{> partials/basket }}
+        </div>
     </div>
     {{> partials/related }}
 </div>
