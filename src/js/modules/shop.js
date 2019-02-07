@@ -1,4 +1,4 @@
-import draggable from '@shopify/draggable';
+import Draggable from '@Shopify/draggable/lib/draggable';
 
 const basketLimit = 4;
 
@@ -13,7 +13,7 @@ export default {
     },
 
     initDragging() {
-        draggableItems = new draggable.Draggable(document.querySelectorAll('.uit-shop__items'), {
+        draggableItems = new Draggable(document.querySelectorAll('.uit-shop__items'), {
             draggable: '.uit-shop__item',
             delay: 200,
             mirror: {
