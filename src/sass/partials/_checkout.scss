@@ -254,13 +254,13 @@ $duration: 5s;
 }
 
 @keyframes face {
-    0%, 25%, 40%, 75%, 90%, 100% {
+    0%, 25%, 60%, 100% {
         background-image: url('{{ path }}/assets/header/face--1.png');
     }
     26%, 39% {
         background-image: url('{{ path }}/assets/header/face--2.png');
     }
-    40%, 60% {
+    40%, 59% {
         background-image: url('{{ path }}/assets/header/face--3.png');
     }
 }
