@@ -117,6 +117,7 @@ $duration: 5s;
     }
 
     .uit-checkout__button {
+        display: block;
         bottom: auto;
         top: 0;
         left: auto;
@@ -192,6 +193,10 @@ $duration: 5s;
     transition: opacity 0.8s;
     opacity: 0.2;
     pointer-events: none;
+
+    @include mq($until: desktop) {
+        display: none;
+    }
 
     .is-checkoutable & {
         opacity: 1;
