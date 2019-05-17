@@ -10,18 +10,19 @@
     flex-wrap: nowrap;
     width: 100vw;
     margin-left: -10px;
-    max-height: 150vw;
+    height: 150vw;
     padding-bottom: 20px;
-    transition: max-height 4s linear;
+    transition: height 1s linear;
+    transition-delay: 5.5s;
     overflow: hidden;
 
     @include mq(mobileLandscape) {
         margin-left: -20px;
-        max-height: 93vw;
+        height: 93vw;
     }
 
     @include mq(tablet) {
-        max-height: 600px;
+        height: 600px;
         width: 738px;
     }
 
@@ -35,6 +36,6 @@
     }
 
     .is-final & {
-        max-height: 5000px;
+        transition-delay: 0s;
     }
 }

@@ -118,6 +118,8 @@ export default {
 
         this.extendJqueryEasing();
 
+        $('.uit-market__content').height(this.getItemsHeight());
+
         $('.uit-market__content').animate({
             scrollLeft: $('.uit-market__content').get(0).scrollWidth - $('.uit-market__content').width()
         }, 6000, $.bez([0.3, 0.7, 0.7, 0.3]), function() {
@@ -128,10 +130,17 @@ export default {
         }.bind(this))
     },
 
+    getItemsHeight() {
+        var height = 0;
+
+        $('.uit-items__initial').children().each(function(i, el) {
+            height += $(el).outerHeight();
+        });
+
+        return height;
+    },
+
     repositionMarket() {
-        console.log('start to re-position');
-        console.log($('.uit-market__content').width());
-        console.log($('.uit-market__content').get(0).scrollWidth);
         $('.uit-market__content').scrollLeft($('.uit-market__content').get(0).scrollWidth);
     },
 

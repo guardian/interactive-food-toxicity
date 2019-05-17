@@ -28,6 +28,11 @@
     .uit-content {
         padding: 12px 0;
     }
+
+    p {
+        margin: 0;
+        padding-bottom: 12px;
+    }
 }
 
 .uit-items__receipt-wrapper {
@@ -125,14 +130,9 @@
 }
 
 .uit-items__other {
-    max-height: 0;
-    visibility: hidden;
-    transition: all 2s linear;
-    will-change: max-height;
-    will-change: height;
+    display: none;
 
     .is-expanded & {
-        max-height: 4000px;
-        visibility: visible;
+        display: block;
     }
 }

@@ -10,7 +10,11 @@ module.exports =  {
     },
 
     revealOtherItems: function() {
-        console.log($('.uit-items__other').height());
         $('.uit-items').addClass('is-expanded');
-    }
+        $('.uit-market__content').height(this.getItemsHeight());
+    },
+
+    getItemsHeight: function() {
+        return $('.uit-items__initial').outerHeight() + $('.uit-items__other').outerHeight();
+    },
 };
