@@ -84,7 +84,7 @@
     display: flex;
     padding-bottom: 12px;
     margin-bottom: 12px;
-    border-bottom: 1px solid $c-light-grey;
+    border-bottom: 1px solid rgba($c-black, 0.1);
 
     &:last-of-type {
         padding-bottom: 32px;
