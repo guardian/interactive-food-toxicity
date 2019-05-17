@@ -22,6 +22,10 @@ $duration: 5s;
         padding-left: 20px;
         padding-right: 0;
     }
+
+    @include mq(wide) {
+        padding-left: 21px;
+    }
 }
 
 .uit-checkout {
