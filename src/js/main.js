@@ -5,7 +5,9 @@ window.$ = jquery;
 import share from './modules/share.js';
 import shop from './modules/shop.js';
 import scroll from './modules/scroll.js';
+import expand from './modules/expand.js';
 
 share.init();
 shop.init();
 scroll.init();
+expand.init();

@@ -5,7 +5,7 @@
         padding-bottom: 24px;
 
         @include mq(tablet) {
-            border-top: 1px solid $c-dark-grey;
+            border-top: 1px solid rgba($c-black, 0.1);
         }
     }
 }
@@ -14,7 +14,7 @@
     margin: auto;
     clear: both;
     margin-bottom: 12px;
-    border-top: 1px solid $c-dark-grey;
+    border-top: 1px solid rgba($c-black, 0.1);
 
     @include mq(tablet) {
         border-top: none;
@@ -51,7 +51,7 @@
             top: -3px;
             width: 1px;
             height: 1.25em;
-            background-color: $c-dark-grey;
+            background-color: rgba($c-black, 0.1);
         }
     }
 }

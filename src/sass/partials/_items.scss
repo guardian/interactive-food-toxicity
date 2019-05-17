@@ -111,3 +111,28 @@
 .uit-items__item-description {
     margin: 0;
 }
+
+.uit-items__button {
+    transition: opacity 0.3s linear;
+
+    &:hover svg {
+        transform: translate(0, 2px);
+    }
+
+    .is-expanded & {
+        opacity: 0;
+    }
+}
+
+.uit-items__other {
+    max-height: 0;
+    visibility: hidden;
+    transition: all 2s linear;
+    will-change: max-height;
+    will-change: height;
+
+    .is-expanded & {
+        max-height: 4000px;
+        visibility: visible;
+    }
+}
