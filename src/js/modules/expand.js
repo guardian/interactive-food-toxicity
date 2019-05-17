@@ -12,6 +12,10 @@ module.exports =  {
     revealOtherItems: function() {
         $('.uit-items').addClass('is-expanded');
         $('.uit-market__content').height(this.getItemsHeight());
+
+        $(window).resize(function() {
+            $('.uit-market__content').height(this.getItemsHeight());
+        }.bind(this));
     },
 
     getItemsHeight: function() {

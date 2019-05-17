@@ -126,8 +126,13 @@ export default {
             $('.uit').addClass('is-final');
             $(window).resize(function() {
                 this.repositionMarket();
+                this.resetHeight();
             }.bind(this));
         }.bind(this))
+    },
+
+    resetHeight() {
+        $('.uit-market__content').height(this.getItemsHeight());
     },
 
     getItemsHeight() {
