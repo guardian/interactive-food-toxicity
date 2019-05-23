@@ -83,7 +83,9 @@ module.exports = {
         });
 
         handlebars.registerHelper('marked', function(string) {
-            return markdown.toHTML(string).replace('<p>', '').replace('</p>', '');
+            if (string) {
+                return markdown.toHTML(string).replace('<p>', '').replace('</p>', '');
+            }
         });
 
         var adId = 0;
