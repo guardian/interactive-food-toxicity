@@ -92,9 +92,19 @@
 }
 
 .uit-related__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     display: block;
     background-color: $c-light-grey;
+}
+
+.uit-related__image-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 60%;
 }
 
 .uit-related__link {
