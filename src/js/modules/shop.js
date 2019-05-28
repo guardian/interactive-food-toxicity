@@ -138,10 +138,6 @@ export default {
         const topOfMarket = $('.uit-market').offset().top;
         const scrollTop = $(window).scrollTop();
 
-        console.log('checking');
-        console.log(topOfMarket);
-        console.log(scrollTop);
-
         if (scrollTop > topOfMarket) {
             $('html, body').animate({
                 scrollTop: topOfMarket - 10
