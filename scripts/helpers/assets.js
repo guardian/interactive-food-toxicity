@@ -37,7 +37,7 @@ module.exports = {
 
             await bundle.write({
                 file: path + '/' + fileName + '.js',
-                format: 'umd',
+                format: 'iife',
                 sourcemap: isDeploy ? false : 'inline'
             });
 
