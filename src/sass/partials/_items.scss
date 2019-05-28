@@ -96,6 +96,16 @@
         margin-bottom: 0;
         border-bottom: 0;
     }
+
+    p a {
+        color: $c-red;
+        border-bottom: 1px solid mix($c-red, $c-white, 20%);
+        text-decoration: none;
+
+        &:hover {
+            border-bottom-color: $c-red;
+        }
+    }
 }
 
 .uit-items__item-image {
