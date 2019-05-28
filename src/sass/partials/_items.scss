@@ -33,6 +33,16 @@
         margin: 0;
         padding-bottom: 12px;
     }
+
+    p a {
+        color: $c-red;
+        border-bottom: 1px solid mix($c-red, $c-white, 20%);
+        text-decoration: none;
+
+        &:hover {
+            border-bottom-color: $c-red;
+        }
+    }
 }
 
 .uit-items__receipt-wrapper {
@@ -95,16 +105,6 @@
         padding-bottom: 32px;
         margin-bottom: 0;
         border-bottom: 0;
-    }
-
-    p a {
-        color: $c-red;
-        border-bottom: 1px solid mix($c-red, $c-white, 20%);
-        text-decoration: none;
-
-        &:hover {
-            border-bottom-color: $c-red;
-        }
     }
 }
 
