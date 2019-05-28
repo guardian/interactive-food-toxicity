@@ -121,6 +121,8 @@ export default {
 
         $('.uit-market__content').height(this.getItemsHeight());
 
+        this.scrollUpBeforeAnimation();
+
         $('.uit-market__content').animate({
             scrollLeft: $('.uit-market__content').get(0).scrollWidth - $('.uit-market__content').width()
         }, 6000, $.bez([0.3, 0.7, 0.7, 0.3]), function() {
@@ -130,6 +132,21 @@ export default {
                 this.resetHeight();
             }.bind(this));
         }.bind(this))
+    },
+
+    scrollUpBeforeAnimation() {
+        const topOfMarket = $('.uit-market').offset().top;
+        const scrollTop = $(window).scrollTop();
+
+        console.log('checking');
+        console.log(topOfMarket);
+        console.log(scrollTop);
+
+        if (scrollTop > topOfMarket) {
+            $('html, body').animate({
+                scrollTop: topOfMarket - 10
+            }, 1000);
+        }
     },
 
     resetHeight() {
