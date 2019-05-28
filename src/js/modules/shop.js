@@ -94,8 +94,9 @@ export default {
 
     updateLabel() {
         const spacesLeftInBasket = basketLimit - basket.length;
-        const text = spacesLeftInBasket === 1 ? '1 item' : spacesLeftInBasket + ' items';
-        $('.uit-checkout__basket-count').text(text);
+        const numbersAsWords = ['zero', 'one', 'two', 'three', 'four']
+        let text = spacesLeftInBasket === 1 ? 'one item' : `${numbersAsWords[spacesLeftInBasket]}${spacesLeftInBasket < 4 ? ' more' : ''} items`;
+        $('.uit-shop__basket-count').text(text);
     },
 
     findEmptySlotInBasket() {
