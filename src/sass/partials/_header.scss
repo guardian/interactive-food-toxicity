@@ -68,15 +68,8 @@
 }
 
 .uit-header__standfirst {
-    padding: 3px 0 0;
-    font-family: 'Guardian Egyptian Web';
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.2;
-
-    @include mq(tablet) {
-        font-size: 24px;
-    }
+    margin-bottom: 0;
+    padding-bottom: 4px;
 }
 
 .uit-header .uit-share {
