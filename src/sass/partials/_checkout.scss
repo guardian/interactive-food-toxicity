@@ -255,22 +255,24 @@ $duration: 5s;
 
 .uit-checkout__face {
     z-index: 2;
-    background-image: url('{{ path }}/assets/header/face--1.png');
+    background-image: url('{{ path }}/assets/header/faces.png');
+    background-size: 100% auto;
+    background-position: top center;
 
     .is-checkedout & {
-        animation: face $duration linear;
+        animation: face $duration steps(1);
     }
 }
 
 @keyframes face {
     0%, 25%, 60%, 100% {
-        background-image: url('{{ path }}/assets/header/face--1.png');
+        background-position: top center;
     }
     26%, 39% {
-        background-image: url('{{ path }}/assets/header/face--2.png');
+        background-position:  center center ;
     }
     40%, 59% {
-        background-image: url('{{ path }}/assets/header/face--3.png');
+        background-position: bottom center;
     }
 }
 .uit-checkout__base {
