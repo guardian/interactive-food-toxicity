@@ -109,11 +109,15 @@
 }
 
 .uit-items__item-image {
-    width: 100px;
+    width: 60px;
     margin-right: 10px;
     flex-shrink: 0;
     display: block;
     align-self: flex-start;
+
+    @include mq(tablet) {
+        width: 100px;
+    }
 }
 
 .uit-items__item-name {
