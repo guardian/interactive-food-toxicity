@@ -69,7 +69,17 @@
 
 .uit-header__standfirst {
     margin-bottom: 0;
-    padding-bottom: 6px;
+    padding-bottom: 12px;
+
+    a {
+        color: $c-red;
+        border-bottom: 1px solid mix($c-red, $c-white, 20%);
+        text-decoration: none;
+
+        &:hover {
+            border-bottom-color: $c-red;
+        }
+    }
 }
 
 .uit-header .uit-share {
